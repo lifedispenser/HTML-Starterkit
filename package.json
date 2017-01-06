@@ -1,0 +1,31 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "browser-sync": "^2.18.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifedispenser/hymnist-mobile.git"
+  },
+  "author": "sying",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifedispenser/hymnist-mobile/issues"
+  },
+  "homepage": "https://github.com/lifedispenser/hymnist-mobile#readme"
+}

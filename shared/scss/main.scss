@@ -1,0 +1,10 @@
+// gulp compiles file that do not have an underscore in front of their name. 
+// You can use this to have multiple stylesheets for different pages as needed.
+
+//  Do not put any css in here. Import the styles you need from other areas
+
+@import "base/media";
+@import "base/var";
+@import "base/fonts";
+@import "base/structure";
+@import "themes/main";

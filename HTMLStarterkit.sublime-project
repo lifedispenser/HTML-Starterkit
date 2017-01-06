@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/lifedispenser/workspace/HTMLStarterkit",
+			"folder_exclude_patterns": ["node_modules"],
+			"file_exclude_patterns": ["HTMLStarterkit.sublime-project", "HTMLStarterkit.sublime-workspace"]
+		}
+	]
+}
