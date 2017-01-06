@@ -17,12 +17,12 @@ gulp.task('nunjucks', function() {
     }))
     .pipe(gulp.dest('public'))
 });
-// Automate CSS compiling
 
+// Automate CSS compiling
 gulp.task('sass', function() {
   return gulp.src('shared/scss/*.scss')
     .pipe(sass())
-    .on('error', gutil.log)
+    .on('error', sass.logError)
     .pipe(gulp.dest('public/css'))
 });
 
@@ -40,11 +40,17 @@ gulp.task('css-future', ['sass'], function() {
 gulp.task('cssnano', ['css-future'], function() {
   return gulp.src('public/css/*.css')
     .pipe(cssnano())
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('public/css'))
+    .pipe(browserSync.stream());
 });
 
 // watch & browser refresh
 gulp.task('watch', function() {
+
+  browserSync.init({
+    server: "./public"
+  });
+
   gulp.watch('shared/scss/**/*.scss', ['cssnano']);
-  gulp.watch('shared/**/*.njk', ['nunjucks']);
+  gulp.watch('shared/**/*.njk', ['nunjucks']).on('change', browserSync.reload);
 });
