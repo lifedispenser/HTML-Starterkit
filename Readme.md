@@ -1,3 +1,5 @@
+**NOTE: Prototype kit is not really usable yet. Sorry!**
+
 ## Prototype kit
 
 A set of scripts, components, and modules to do rapid prototyping of workflows.
