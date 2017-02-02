@@ -38,17 +38,27 @@
           }, 200);
         </script>
         
-	<p>PeerPact is a peer to peer encouragement and shaming network to help you consistently get stuff done.</p>
-	<p>Thanks for trying out this experience. After trying out the idea, please give some feedback. </p>
 
       </div>
       <div class="content">
         
 	<div class="center">
-		<h2>PeerPact</h2>
-		<a href="1.html">Click here to sign in and begin.</a>
-		<br><br>
-		<a href="https://spencer17.typeform.com/to/QBJMzs" target="_blank">Click here to give feedback.</a>
+		<h2>Great! Let’s set up your peer pact for this week.</h2>
+		<p>Since it's your first week, go light. <br> <br> This week I plan to have done:</p>
+		<script>
+		$().ready(function() {
+			$(".change-project-date").html(store.get("project-day") + ", " + store.get("project-time"));
+			$(".week-plan").val(store.get('week-plan'));
+			$(".week-plan").change(function() {
+				store.set("week-plan", $(this).val());
+			})
+		});
+		</script>
+		<textarea class="week-plan" style="width:500px;height:90px;"></textarea>
+		<p>by my due date (<b class="change-project-date">Sunday, 12am</b>)</p>
+		<br><br><br>
+		<a href="4.html">I Agree to this Peer Pact.</a>
+		
 	</div>
 
       </div>

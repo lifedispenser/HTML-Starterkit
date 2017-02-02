@@ -1,7 +1,55 @@
-/* TODO: Read about how I suggest you structure the css styling here:
- * www.weeklyspence.com/how-to-structure-css/1/
- */
+// TODO: Read about how I suggest you structure the css styling here:
+// www.weeklyspence.com/how-to-structure-css/1/
 
-body {
+html, body {
+	height:100%;
+	padding: 0;
 	margin: 0;
+}
+
+//default links
+
+a {
+	cursor:pointer;
+	color: $red;
+}
+a:hover {
+	color: darken($red, 20);
+}
+
+.container {
+	height: 100%;
+}
+.content {
+	flex-grow:1;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	.center {
+		max-width: 550px;
+		text-align: center;
+	}
+}
+
+.chooser {
+	display: flex;
+	justify-content: center;
+	a {
+		color: $grey;
+		padding: 2rem;
+		margin: 0 3px;
+		border: 1px solid $grey;
+	
+		&.selected, &:hover {
+			color: $red;
+			border: 1px solid $red;
+		}
+	}	
+}
+.btn {
+	padding: 7px 14px;
+	color: $red;
+	border:1px solid $red;
+	border-radius: 2px;
 }

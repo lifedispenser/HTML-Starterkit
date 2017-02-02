@@ -52,5 +52,6 @@ gulp.task('watch', function() {
   });
 
   gulp.watch('shared/scss/**/*.scss', ['cssnano']);
-  gulp.watch('shared/**/*.njk', ['nunjucks']).on('change', browserSync.reload);
+  gulp.watch('shared/**/*.njk', ['nunjucks']);
+  gulp.watch('public/**/*.html').on('change', browserSync.reload);
 });

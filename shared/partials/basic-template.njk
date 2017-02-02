@@ -4,17 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/store.min.js"></script>
     <!-- uncomment for bootstrap & font-awesome
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/milligram.min.css">
+    <link rel="stylesheet" href="css/main.css">
     {% block css %}
     {% endblock %}
   </head>
   <body>
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+      <div class="narrator">
+        <script>
+          //fix performance issues with smooth scrolling
+          var didScroll = false;
+          window.onscroll = doThisStuffOnScroll;
+          function doThisStuffOnScroll() {
+            didScroll = true;
+          }
+          setInterval(function() {
+            if(didScroll) {
+              didScroll = false;
+              if( $(window).scrollTop() > 1 ) {                
+                $(".narrator").addClass("narrator--hide");
+              }
+              else {
+                $(".narrator").removeClass("narrator--hide");
+              }
+            }
+          }, 200);
+        </script>
+        {% block narrator %}
+        {% endblock %}
+      </div>
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
   </body>
   {% block js %}
   {% endblock %}

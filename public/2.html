@@ -38,17 +38,33 @@
           }, 200);
         </script>
         
-	<p>PeerPact is a peer to peer encouragement and shaming network to help you consistently get stuff done.</p>
-	<p>Thanks for trying out this experience. After trying out the idea, please give some feedback. </p>
 
       </div>
       <div class="content">
         
 	<div class="center">
-		<h2>PeerPact</h2>
-		<a href="1.html">Click here to sign in and begin.</a>
+		<script>
+		$().ready(function() {
+			$(".invite").click(function() {
+				$(".narrator").append("<b>Great, a journey with a friend!</b> As this is just a prototype, we won't actually be inviting your friend, so please pretend that your friend accepted and is the anonymous peer that will be joining you shortly.<br><br><br><a href='3.html'>Onward</a>");
+			});
+		})
+		</script>
+		<p>Congrats! You just took the first step to consistently getting stuff done. <b>Now let’s make sure of it.</b></p>
+		<p>We’ll randomly assign you a peer to <b>encourage you</b> and <b>keep an eye</b> on your productivity. Or, you can invite someone to be your peer below. </p>
 		<br><br>
-		<a href="https://spencer17.typeform.com/to/QBJMzs" target="_blank">Click here to give feedback.</a>
+		<div class="">
+			<script></script>
+			<a class="btn" href="3.html">Peer me up, Scotty!</a>
+			<br><br>
+			OR
+			<br><br>
+			I want to invite a friend. <br>Email Address: <input type="text">
+			<br><br>
+			<a class="btn invite">Invite Friend</a>
+			<br><br><br>
+			<a href="3.html">Next</a>
+		</div>
 	</div>
 
       </div>

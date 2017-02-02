@@ -1,0 +1,43 @@
+
+// if bigger than 1200px, make narrator on left
+@include media(">=1204px") {
+	.container {
+		display:flex;
+		height: 100%;
+		flex-direction: row;
+	}
+	.narrator {
+		height: 100%;
+		padding:7px;
+		background: $light-grey;
+		width: calc(100vw - 1000px);
+		flex-grow: 0;
+	}
+	.content {
+		height: 100%;
+		flex-grow: 1;
+		overflow:auto;
+	}
+}
+
+//if smaller, make narrator on the bottom with hide on scroll.
+@include media("<1204px") {
+	.narrator {
+		background: $light-grey;
+		padding:0 7px;
+		position:fixed;
+		bottom: 0;
+		height: 130px;
+		width: 100%;
+		&--hide {
+			height: 0px;
+			display:none;
+			& + .content {
+				padding-bottom: 130px;
+			}
+		}
+	}
+	.content {
+		padding-bottom: 130px;
+	}
+}
