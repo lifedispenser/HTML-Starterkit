@@ -16,31 +16,37 @@
     
   </head>
   <body>
-    <div class="container">
-      <div class="narrator">
-        <script>
-          //fix performance issues with smooth scrolling
-          var didScroll = false;
-          window.onscroll = doThisStuffOnScroll;
-          function doThisStuffOnScroll() {
-            didScroll = true;
-          }
-          setInterval(function() {
-            if(didScroll) {
-              didScroll = false;
-              if( $(window).scrollTop() > 1 ) {                
-                $(".narrator").addClass("narrator--hide");
-              }
-              else {
-                $(".narrator").removeClass("narrator--hide");
-              }
-            }
-          }, 200);
-        </script>
-        
+  <div class="narrator-bar hide">View Narrator</div>
+    <div class="narrator">
+      <script> 
+        $().ready(function() {
+          $(".narrator .close").click(function() {
+            $(".narrator").addClass("hide");
+            $(".narrator-bar").removeClass("hide");
+          });
+          $(".narrator-bar").click(function() {
+            $(".narrator").removeClass("hide");
+            $(".narrator-bar").addClass("hide");
+          })
+        });
+      </script>
+      <div class="close">×</div>
+      <div class="content">
+      
 	<b>A couple of hours pass, and you get another email from your peer!</b>
 
       </div>
+      <div class="nav">
+        <a href="">Restart</a>
+        <a href="">Back</a>
+        <a href="">Next</a>
+        <a href="">S1</a>
+        <a href="">S2</a>
+        <a href="">S3</a>
+      </div>
+    </div>
+    <div class="container">
+      
       <div class="content">
         
 	<div class="center" style="max-width:1000px;">

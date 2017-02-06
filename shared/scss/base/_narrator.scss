@@ -1,43 +1,94 @@
 
-// if bigger than 1200px, make narrator on left
-@include media(">=1204px") {
-	.container {
-		display:flex;
-		height: 100%;
-		flex-direction: row;
+.narrator, .narrator-bar {
+	position:absolute;
+	bottom: 0;
+	box-shadow: 0 2px 5px $grey;
+	z-index: 3;
+}
+.narrator-bar {
+	right: 10%;
+	width: 200px;
+	height: 40px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background: white;
+	&:hover {
+		color: black;	
 	}
-	.narrator {
-		height: 100%;
-		padding:7px;
-		background: $light-grey;
-		width: calc(100vw - 1000px);
-		flex-grow: 0;
+}
+.narrator {
+	background: white;
+	right: 200px;
+	max-height: 400px;
+	padding: 40px;	
+	
+	width: 600px;
+	.close {
+		$size: 15;
+		position: absolute;
+		/* centering */ 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 0;
+		/* size */
+		top: -$size + px;
+		right: -$size + px;
+		width: $size*2 + px;
+		height: $size*2 + px;
+		border-radius: $size*3 + px;
+		font-size: 22px;
+		/* color */
+		background: white;
+		border: 2px solid $grey;
+		color: $grey;
+		cursor: pointer;
+		&:hover {
+			border: 2px solid $red;
+			color: $red;
+		}
 	}
-	.content {
-		height: 100%;
-		flex-grow: 1;
-		overflow:auto;
+	.n {
+		position: absolute;
+		top: 18px;
+		right: 40px;
+		font-style: italic;
+		color: #aaa;
+	}
+	.nav {
+
+		a {
+			font-size:14px;
+			padding: 0 6px;
+		}
+	}
+	.content { 
+		display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+		height: 320px;
+		overflow-y: auto;
 	}
 }
 
 //if smaller, make narrator on the bottom with hide on scroll.
-@include media("<1204px") {
+@include media("<900px") {
 	.narrator {
-		background: $light-grey;
-		padding:0 7px;
-		position:fixed;
-		bottom: 0;
-		height: 130px;
-		width: 100%;
-		&--hide {
-			height: 0px;
-			display:none;
-			& + .content {
-				padding-bottom: 130px;
-			}
+		right: 10%;
+		width: 80%;
+		height: 300px;
+		.content {
+		height: 220px;
+
+		}
+		.nav a {
+			font-size:11px;
 		}
 	}
-	.content {
-		padding-bottom: 130px;
-	}
+}
+
+.hide {
+	display:none;
 }
