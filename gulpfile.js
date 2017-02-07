@@ -10,17 +10,17 @@ var plumber = require('gulp-plumber');
 
 // Automate HTML compiling
 gulp.task('nunjucks', function() {
-  return gulp.src('shared/pages/*.njk')
+  return gulp.src('src/pages/*.njk')
     .pipe(plumber())
     .pipe(nunjucksRender({
-      path: ['shared/partials']
+      path: ['src/partials']
     }))
     .pipe(gulp.dest('public'))
 });
 
 // Automate CSS compiling
 gulp.task('sass', function() {
-  return gulp.src('shared/scss/*.scss')
+  return gulp.src('src/scss/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('public/css'))
@@ -51,7 +51,7 @@ gulp.task('watch', function() {
     server: "./public"
   });
 
-  gulp.watch('shared/scss/**/*.scss', ['cssnano']);
-  gulp.watch('shared/**/*.njk', ['nunjucks']);
+  gulp.watch('src/scss/**/*.scss', ['cssnano']);
+  gulp.watch('src/**/*.njk', ['nunjucks']);
   gulp.watch('public/**/*.html').on('change', browserSync.reload);
 });
