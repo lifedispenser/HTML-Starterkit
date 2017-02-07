@@ -1,10 +1,10 @@
 **NOTE: Prototype kit is not really usable yet. Sorry!**
 
-## Prototype Kit
+# Prototype Kit
 
 Prototype kit (PK) A set of scripts, components, and modules to do rapid prototyping of workflows.
 
-### Intro
+## Intro
 
 In the vast world of prototyping tools, including paper, sketch, invision, oragami, and more, PK is optimized for **exploring workflows**. It gives the bare bones needed to quickly build HTML/CSS pages that mimic the expected behavior of the real app.
 
@@ -12,7 +12,7 @@ PK aims to have the same fidelity as paper prototypes. Both are meant to be used
 
 PK's goal is to be as **quick as paper prototypes to build** but still **correctly simulate use**, like link clicks and form submissions. It also aims to provide a framework for testers to explore scenario options with narration and navigational tools.
 
-### Quick Start
+## Quick Start
 
 * clone the repo
 * open up terminal and navigate to the folder
@@ -20,11 +20,14 @@ PK's goal is to be as **quick as paper prototypes to build** but still **correct
 * run `gulp watch`
 * Add pages to `src/pages/` and go wild!
 
-### How to use
+## The Tools behind Prototype-kit
 
 In it's core, PK uses nunjucks and sass to build HTML and CSS. However, included with PK is several core modules that you can utilize for navigation, form fill/data storage, and more.
 
-#### File structure
+### Gulp
+[Todo: write about gulp usage]
+
+### File structure
 
 The two major folders within PK are `src` and `public`. `public` is the folder that all the templates and css compiles to, and `src` is the folder where all your uncompiled templates and sass are. 
 
@@ -40,11 +43,11 @@ The Nunjucks documentation is pretty good: https://mozilla.github.io/nunjucks/. 
 
 The sass docs are also good: http://sass-lang.com/guide. I like to follow a components based approach to build sass using BEM style. 
 
-#### PK Components
+## PK Components
 
-At the core of PK is an opinionated set of components that help define workflows and enable their testing.
+At the core of PK is an opinionated set of components that help define workflows and enable their user testing.
 
-##### Narration:
+#### Narration:
 
 The narration block is a styled popup that explains a page or the context for how you arrived at the page. Any time you have to explain to a user what is going on within the app, you should use the narrator.
 
@@ -60,21 +63,21 @@ The following are some use cases for the narrator:
 * Introducing the app to the tester with a small pitch
 * Describing what happens without building the full experience out.
 * If an event triggers the app to notify the user, you can describe what triggered the scenario *(after 5 days pass, you receive this email asking you to do this)*
-* And lots more. Generally anything that breaks the 4th wall should use the narrator.
+* And lots more. Generally anything that breaks the 4th wall should use the narrator component.
 
 If you would like to see how it is built, checkout `src/partials/narrator.njk` and `src/scss/base/narrator.scss`
 
-Even if there is no text, the narrator block contains useful links to navigate through the workflow. 
+The narrator block also contains automatic navigation links through the workflow.
 
-The narration block is absolutely positioned and doesn't mess with your layout. It is shown when the page loads, but hides once the page scrolls or anything is clicked out, with the option of opening it again. 
+The narration block is absolutely positioned and doesn't mess with your layout. It is shown when the page loads, but hides once the page scrolls or anything is clicked on.
 
 #### Navigation:
 
-Prototype kit uses a **naming convention** to assume linear and tree structure workflows. 
+Prototype kit uses a **naming convention** for file names covering two types of workflows - linear workflows and decision trees.
 
-Following the convention allows PK to create dynamic links to the next, previous, parent and child pages and also build a site map. **These dynamic links are really, really helpful when moving around pages or adjusting workflows** since you do not have to change the links on the pages every time, and also in navigating through the pages quickly through a site map on the user testing end.
+Following the naming convention allows PK to create dynamic links to the next, previous, parent and child pages and also build a site map. **These dynamic links are really, really helpful when moving around pages or adjusting workflows** since you do not have to change the links on the pages every time, and also in navigating through the pages quickly through a site map on the user testing end.
 
-##### Linear Workflow:
+##### Linear Workflow
 
 PK expects linear workflows have a starting point and also to be ordered by number: ie.
 ```
@@ -89,7 +92,7 @@ index.html
 
 The starting point is either index.html, or an option of a decision tree.
 
-##### Decision Tree Workflow:
+##### Decision Tree Workflow
 
 If a screen leads to multiple outcomes, the primary outcomes will be the next linear workflow, and other outcomes will be lettered like so:
 
