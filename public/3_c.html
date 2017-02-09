@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>Peer Pact Home</title>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/store.min.js"></script>
     <script type="text/javascript" src="js/sitemap.json"></script>
@@ -13,8 +13,8 @@
     -->
     <link rel="stylesheet" href="css/milligram.min.css">
     <link rel="stylesheet" href="css/main.css">
-    {% block css %}
-    {% endblock %}
+    
+    
     <script>
       function lookup() {
         var curl = window.location.pathname.split(".html")[0];
@@ -239,16 +239,67 @@
     </script>
   </head>
   <body>
-    {% include "narrator.njk" %}
+    <div class="narrator-bar hide">View Narrator</div>
+    <div class="narrator">
+      <script> 
+        function hideNarrator() {
+          $(".narrator").addClass("hide");
+          $(".narrator-bar").removeClass("hide");
+        }
+        function showNarrator() {
+          $(".narrator").removeClass("hide");
+          $(".narrator-bar").addClass("hide");
+        }
+        $().ready(function() {
+          console.log($(".narrator .content").text().trim().length);
+          if($(".narrator .content").text().trim().length == 0) {
+            hideNarrator();
+          }
+          $(".narrator .close").click(function() {
+            hideNarrator();
+          });
+          $(".narrator-bar").click(function() {
+            showNarrator();
+          })
+        });
+      </script>
+      <div class="close">×</div>
+      <div class="content">
+      
+      
+      </div>
+      <div class="nav">
+        <a class="pknav restart">Restart</a>
+        <a class="pknav prev">Prev</a>
+        <a class="pknav next">Next</a>
+      </div>
+    </div>
 
     <div class="container">
       
       <div class="content">
-        {% block content %}
-        {% endblock %}
+        
+	<div class="center" style="max-width:1000px;">
+		<script>
+			$().ready(function() {
+				$(".feedback").click(function() {
+					alert("You will be able to send feedback in the form of text or more memes to your peer.");
+				});
+			});
+		</script>
+		<h2>Your peer has sent you some work! Email received:</h2>
+		<img src="img/emails/work.png" alt="">
+		<br><br>
+		<a class="feedback btn">Send some feedback</a>
+
+		<br><br>
+<a href="9.html">Back</a> <br><br>
+<a href="https://spencer17.typeform.com/to/QBJMzs">Final Survey</a>
+	</div>
+
       </div>
     </div>
   </body>
-  {% block js %}
-  {% endblock %}
+  
+  
 </html>

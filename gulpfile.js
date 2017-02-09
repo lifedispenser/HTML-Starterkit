@@ -7,7 +7,17 @@ var cssnano = require('gulp-cssnano');
 var nunjucksRender = require('gulp-nunjucks-render');
 var browserSync = require('browser-sync').create();
 var plumber = require('gulp-plumber');
+var directoryMap = require('./dmap');
 
+// Create a JSON file with tree structure of project for sitemaps and easy nav
+
+gulp.task('sitemap', function() {
+  return gulp.src('public/**/*.html')
+    .pipe(directoryMap({
+      filename: 'sitemap.json'
+    }))
+    .pipe(gulp.dest('public/js'));
+});
 // Automate HTML compiling
 gulp.task('nunjucks', function() {
   return gulp.src('src/pages/*.njk')
@@ -53,5 +63,5 @@ gulp.task('watch', function() {
 
   gulp.watch('src/scss/**/*.scss', ['cssnano']);
   gulp.watch('src/**/*.njk', ['nunjucks']);
-  gulp.watch('public/**/*.html').on('change', browserSync.reload);
+  gulp.watch('public/**/*.html', ['sitemap']).on('change', browserSync.reload);
 });

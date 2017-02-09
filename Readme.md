@@ -73,7 +73,7 @@ The narration block is absolutely positioned and doesn't mess with your layout. 
 
 #### Navigation:
 
-Prototype kit uses a **naming convention** for file names covering two types of workflows - linear workflows and decision trees.
+Prototype kit uses a **naming convention** based on outlines for file names covering two types of workflows - linear workflows and decision trees.
 
 Following the naming convention allows PK to create dynamic links to the next, previous, parent and child pages and also build a site map. **These dynamic links are really, really helpful when moving around pages or adjusting workflows** since you do not have to change the links on the pages every time, and also in navigating through the pages quickly through a site map on the user testing end.
 
@@ -81,16 +81,18 @@ Following the naming convention allows PK to create dynamic links to the next, p
 
 PK expects linear workflows have a starting point and also to be ordered by number: ie.
 ```
-index.html
-1.html
-2.html
-3.html
+// all .njk files will be compiled to .html files in the public folder
+
+index.njk
+1.njk
+2.njk
+3.njk
 ...
-12.html
-13.html
+12.njk
+13.njk
 ```
 
-The starting point is either index.html, or an option of a decision tree.
+The starting point is either index.njk, or an option of a decision tree.
 
 ##### Decision Tree Workflow
 
@@ -98,64 +100,145 @@ If a screen leads to multiple outcomes, the primary outcomes will be the next li
 
 ```
 ...
-2.html //has multiple outcomes
-3.html 
-  3a.html //is primary outcome (and also is next linear workflow)
-  3b.html //is second outcome
-  3c.html //is third outcome
+2.njk //has multiple outcomes
+3.njk 
+  3_a.njk //is primary outcome (and also is next linear workflow)
+  3_b.njk //is second outcome
+  3_c.njk //is third outcome
   ...
-  3z.html
-4.html //continues the linear workflow from 3.html
+  3_z.njk
+4.njk //continues the linear workflow from 3.njk
 ```
 
 Linear and tree workflows can be nested. A linear workflow can split into multiple outcomes, which can each have a linear workflow, etc. 
 ```
-index.html
-1.html
-2.html
+index.njk
+1.njk
+2.njk
   //decision tree
-  2a.html //this is 'the index page' of workflows from 2a
+  2_a.njk //this is 'the index page' of workflows from 2a
     //decision tree of 2a
-    2aa.html
-    2ab.html
-    2ac.html
+    2_a_a.njk
+    2_a_b.njk
+    2_a_c.njk
     //linear workflow of 2a
-    2a1.html 
-    2a2.html 
-    2a3.html 
+    2_a_1.njk 
+    2_a_2.njk 
+    2_a_3.njk 
     //decision tree stemming from 2a3
-      2a3a.html // yes, this can get confusing
-      2a3b.html
-      2a3c.html
-  2b.html
-  2c.html
-4.html
+      2_a_3_a.njk // yes, this can get confusing
+      2_a_3_b.njk
+      2_a_3_c.njk
+  2.b.njk
+  2.c.njk
+4.njk
 ```
+
+##### Inserting
+
+Sometimes, you are in the groove and cranking out pages, only to realize that you missed page 2, and you are on page 15. To insert a page 2 means you have to rename files 3-15 - too much work. Instead, you can use the insert naming scheme:
+
+```
+
+1.njk
+2.njk
+2__1.njk //insert 2__1.njk between 2.njk & 3.njk
+3.njk
+4.njk
+5.njk
+
+//From 2.njk, NEXT goes to 2-1.njk instead of 3.njk
+//From 3.njk, PREV goes to 2-1.njk instead of 2.njk
+//From 2__1.njk, next and prev go to 2.njk or 3.njk
+
+```
+
+If you have too many inserts and would like to have a clean file tree again, simply run `gulp fix` in the command line:
+
+```
+// pages are too messy?
+
+1.njk
+1__1.njk
+1__2.njk
+2.njk
+2__1.njk
+2__2.njk
+3.njk
+3_a.njk
+3_a__1.njk
+3_b.njk
+3_c.njk
+4.njk
+5.njk
+
+// running `gulp fix` will rename your files to:
+1.njk
+2.njk // was 1__1.njk
+3.njk // was 1__2.njk
+4.njk
+5.njk // was 2__1.njk
+6.njk // was 2__2.njk
+7.njk
+7_a.njk
+7_b.njk // was 3_a__1.njk 
+7_c.njk
+7_d.njk
+8.njk
+9.njk
+```
+
+##### Q: Why do you use '_' for your naming convention? Why not '.', '-', ' ', or something else that is slightly easier to type?
+
+Ordering. Visual Studio Code is the best - you can use whatever you like and it will show in the file tree correctly, but Sublime text only shows the correct order with '_'. Atom is a lost cause. 
+
+```
+// In my opinion, this looks pretty clean:
+1.njk
+2.njk
+3.njk
+  3.a.njk
+  3.b.njk
+  3.c.njk
+4.njk
+
+// But it actually shows up like this:
+1.njk
+2.njk
+3.a.njk
+3.b.njk
+3.c.njk
+3.njk // move back up please!!!
+4.njk
+
+// no good.
+```
+
 
 ##### Name scoping your workflows
 
 If you would like to name scope your workflows you can do so in two ways:
 
-The first is through folder structure:
+The first is through folder structure. 
 ```
 |- public
-  |- folder1 //the url to view will be localhost:3000/folder1/index.html
-     |- index.html
-     |- 1.html
+  |- folder1 //the url to view will be localhost:3000/folder1/index.njk
+     |- index.njk
+     |- 1.njk
      |- etc
   |- folder2 // localhost:3000/folder2/
-     |- index.html
-     |- 1.html
+     |- index.njk
+     |- 1.njk
      |- etc
 ```
 
-The second is by prefixing a name onto the file:
+The second is by prefixing a name onto the file followed by a '-'. As long as you don't use '_' in your file, it should work fine. However, you lose the file ordering if this is the case
 ```
 |- public
-  |- pinitdraft.html // localhost:3000/pinitdraft.html
-  |- pinitdraft-1.html
-  |- pinitdraft-2.html
-  |- pinitdraft-2a.html
+  |- index.njk // localhost:3000/pinitdraft.njk
+  |- login-1.njk
+  |- step2-2.njk
+  |- multi-step-process-choiceA-2_a.njk
   |- etc
 ```
 
@@ -170,24 +253,15 @@ Once you have followed the naming convention in creating your files, anytime you
 
 'pknav' - Enable navigation functionality on any HTML element 
 
-'restart' or 'index' - will go to index.html
-
-'base' - will go to the start of the current workflow
+'start' or 'index' - will go to index.html
 
 'next' - will go to the next linear workflow.
-
 'prev' - will go to the previous linear workflow
 
 'parent' - will go to the start point for the decision tree.
-
 'child-[a-z]' - ie: 'child-a', 'child-b', 'child-c', etc. Will go that particular decision node
 
-'next-parent' - will go to the next item after the parent
-
 ```
-
-
-
 
 
 Prototype kit assumes a convention of numbered pages. For linear workflows, PK looks for html pages that are numbered in order (ie: index.html, 1.html, 2.html, 3.html, etc.). If a page (1.html) can lead to multiple decisions, the decisions start with 2.html, and then use letters to denote the various options (2.html, 2a.html, 2b.html, 2c.html, etc). These pages can also have linear workflows or decision trees assigned to them: (ie: 2a.html, 2a1.html 2a2.html, 2a3.html OR 2a.html -> 2a1.html, 2a1a.html, 2a1b.html)
