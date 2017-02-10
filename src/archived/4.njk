@@ -1,0 +1,40 @@
+{% set title = "Peer Pact Home" %}
+{% block narrator %}
+{% endblock %}
+{% block content %}
+	<div class="center">
+		<h2>Phew! Alright, send some encouragement to your peer!  </h2>
+		<link rel="stylesheet" href="css/unslider.css">
+		<link rel="stylesheet" href="css/unslider-dots.css">
+		<script src="js/unslider-min.js"></script>
+		<script>
+			$().ready(function() {
+				$(".my-slider").unslider({
+					arrows: true
+				});
+			})
+		</script>
+		<div class="my-slider">
+			<ul>
+				<li><img src="img/memes/1.jpg" alt=""></li>
+				<li><img src="img/memes/2.jpg" alt=""></li>
+				<li><img src="img/memes/3.jpg" alt=""></li>
+				<li><img src="img/memes/4.jpg" alt=""></li>
+				<li><img src="img/memes/5.jpg" alt=""></li>
+				<li><img src="img/memes/6.jpg" alt=""></li>
+				<li><img src="img/memes/7.jpg" alt=""></li>
+				<li><img src="img/memes/8.jpg" alt=""></li>
+				<li><img src="img/memes/9.jpg" alt=""></li>
+				<li><img src="img/memes/10.jpg" alt=""></li>
+				<li><img src="img/memes/11.jpg" alt=""></li>
+				<li><img src="img/memes/12.jpg" alt=""></li>
+				<li><img src="img/memes/13.jpg" alt=""></li>
+				<li><img src="img/memes/14.jpg" alt=""></li>
+			</ul>
+		</div>
+		<br><br><br>
+		<a class="btn" href="5.html">Send this meme</a>
+		
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

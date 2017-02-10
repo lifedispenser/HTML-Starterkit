@@ -7,11 +7,10 @@
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/store.min.js"></script>
     <script type="text/javascript" src="js/sitemap.json"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <!-- uncomment for bootstrap & font-awesome
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     -->
-    <link rel="stylesheet" href="css/milligram.min.css">
     <link rel="stylesheet" href="css/main.css">
     
     
@@ -224,12 +223,14 @@
               var d = c.split("-")
               var link = chooser[d[0]](d[1]);
             } else if (c !== '' && c !== 'pknav') {
-              var link = chooser[c]();
-            }    
+              if(chooser[c] !== undefined) {
+                var link = chooser[c]();
+              }
+            }
             if(link) {
-                console.log("page detected, going to:", link + ".html");
-                window.location.href = link + ".html";
-              }  
+              console.log("page detected, going to:", link + ".html");
+              window.location.href = link + ".html";
+            }  
           }
         });
       }
@@ -239,55 +240,85 @@
     </script>
   </head>
   <body>
-    <div class="narrator-bar hide">View Narrator</div>
-    <div class="narrator">
-      <script> 
-        function hideNarrator() {
-          $(".narrator").addClass("hide");
-          $(".narrator-bar").removeClass("hide");
+    <script>
+      function loadStore() {
+        $(".pkls").
+      }
+      function hideNarrator() {
+        $(".narrator").addClass("hide");
+        // change icon to show
+        if($(".narrator .message-body").text().trim().length > 0) {
+          $(".narrator-bar .open i").removeClass().addClass("fa fa-commenting")
+        } else {
+          $(".narrator-bar .open i").removeClass().addClass("fa fa-comment-o")
         }
-        function showNarrator() {
-          $(".narrator").removeClass("hide");
-          $(".narrator-bar").addClass("hide");
+      }
+      function showNarrator() {
+        $(".narrator").removeClass("hide");
+        $(".narrator-bar .open i").removeClass().addClass("fa fa-commenting-o")
+      }
+      $().ready(function() {
+        if($(".narrator .message-body").text().trim().length == 0) {
+          hideNarrator(); // hide narrator also changes the icon
         }
-        $().ready(function() {
-          console.log($(".narrator .content").text().trim().length);
-          if($(".narrator .content").text().trim().length == 0) {
+        $(".narrator .delete").click(function() {
+          hideNarrator();
+        });
+        $(".narrator-bar .open").click(function() {
+          if($(".narrator").hasClass("hide")) {
+            showNarrator();  
+          } else {
             hideNarrator();
           }
-          $(".narrator .close").click(function() {
-            hideNarrator();
-          });
-          $(".narrator-bar").click(function() {
-            showNarrator();
-          })
-        });
-      </script>
-      <div class="close">×</div>
-      <div class="content">
-      
-      
-      </div>
-      <div class="nav">
-        <a class="pknav restart">Restart</a>
-        <a class="pknav prev">Prev</a>
-        <a class="pknav next">Next</a>
-      </div>
+          
+        })
+      });
+    </script>
+
+    <div class="narrator-bar">
+      <a class="pknav restart">Home</a>
+      <a class="pknav prev">Prev</a>
+      <a class="pknav next">Next</a>
+      <a class="open"><span class="icon"><i class="fa fa-commenting"></i></span></a>
     </div>
 
-    <div class="container">
-      
-      <div class="content">
+    <div class="narrator message is-info">
+      <div class="message-header">
+        <p>Narrator</p>
+        <button class="delete"></button>
+      </div>
+      <div class="message-body">
         
-	<div class="center">
-		<h2>PeerPact</h2>
-		<a href="1.html">Click here to sign in and begin.</a>
-		<br><br>
-		<a href="https://spencer17.typeform.com/to/QBJMzs" target="_blank">Click here to give feedback.</a>
-	</div>
+	<p>PeerPact is a peer to peer encouragement and shaming network to help you consistently get stuff done.</p>
+	<p>Thanks for trying out this experience. After trying out the idea, please give some feedback. </p>
 
       </div>
     </div>
+    
+	<section class="hero is-primary is-large header-image">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<h1 class="title is-2">
+				Peer Pact
+				</h1>
+				<h2 class="subtitle is-5">
+				A peer to peer encouragement and shame network to help you get stuff done.
+				</h2>
+				<p>This is a workflow demo</p>
+				<p>
+					<a class="pknav next button is-primary is-medium">
+						<span>
+							Get Started
+						</span>
+						<span class="icon">
+							<i class="fa fa-arrow-right"></i>
+						</span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</section>
+
   </body>
   
   

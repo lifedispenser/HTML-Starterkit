@@ -2,6 +2,9 @@
 // You can use this to have multiple stylesheets for different pages as needed.
 
 //  Do not put any css in here. Import the styles you need from other areas
+@import "bulma/bulma";
+
+
 @import "base/media";
 @import "base/var";
 @import "base/fonts";

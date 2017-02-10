@@ -271,6 +271,63 @@ This navigation can be compiled into a site map with helpers that allow it to be
 #### Forms & Variables
 PK uses localstorage to save data, mimicing form submission, login, etc. The variables are stored across the app and easily accessible with an API.
 
+##### Forms
+Forms with a `pkls` class (stands for: Prototype-Kit-Load-Save) will detect, save, and load any user inputted data submitted. To use:
+
+```
+  <form class="pkls" name="project">
+    <input name="title" />
+    <textarea name="description"></textarea>
+    <button>Save</button>
+  </form>
+  // on form submit, saves and loads data as: 
+  { project: {
+    title: "<input text>",
+    description: "<textarea text>"
+    }
+  }
+```
+
+You can also use the `pkls` class on any inputs, links, divs, or other custom elements that aren't included in a form. Just add a name or value element like so, and they will both save and load user inputted data.
+
+```
+<input class="pkls" name="project.title" />  // Saves input value on change.
+<a class="pkls" name="project.settings.option" value="b">Option B</a> // Saves project.settings.option to be "b". 'pkls' detects this is loaded and adds a highlight class to it.
+<div class="pkls" name="project.id" value="3"> This is a project card.</div> // Saves project.id to be "3".
+
+```
+
+Note: This will also add select-on-click functionality to any element. To have multi-select functionality, add the attribute, `pk-multi-select="true"`:
+
+```
+// this is a single select, which means that when a user clicks a div, only one value will be saved and thus highlighted:
+<div class="pkls" name="project.id" value="1"> P1</div> 
+<div class="pkls" name="project.id" value="2"> P2</div> 
+<div class="pkls" name="project.id" value="3"> P3</div> 
+// id will be only one value.
+{ project: {
+  id: 1
+  }
+}
+
+// this is a multi-select element:
+<div class="pkls" name="project.ids" value="1" pk-multi-select="true"> P1</div> 
+<div class="pkls" name="project.ids" value="2" pk-multi-select="true"> P2</div> 
+<div class="pkls" name="project.ids" value="3" pk-multi-select="true"> P3</div> 
+// id can be now multiple values, so this is possible
+{ project: {
+  id: [1, 2, 3]
+  }
+}
+
+```
+
+You can also load data anywhere with a `pkload` attribute, like so:
+
+```
+The title on your project form was <span pkload="project.title">If no project, this default text will show instead.</span>.
+```
+
 #### Survey links
 Embed a survey link to typeform or google docs easily with these helper classes in the narration module.
 

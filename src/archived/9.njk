@@ -1,0 +1,27 @@
+{% set title = "Peer Pact Home" %}
+{% block narrator %}
+	<b>You’ve finished your work! Now to check it in…</b>
+{% endblock %}
+{% block content %}
+	<div class="center">
+		<script>
+		$().ready(function() {
+			$(".change-project-date").html(store.get("project-day") + ", " + store.get("project-time"));
+		});
+		</script>
+		<h2>Checkin for this week.</h2>
+		<p>Deadline: <b class="change-project-date"></b></p>
+		<p>Copy and paste a portion of what you’ve done this week. This will be shown to your peer.</p>
+		<textarea style="width:500px;height:90px;">Copy and paste in your work here...</textarea>
+		<br><br>
+		<a href="3a.html" class="btn">Submit</a>
+		<br><br><br>
+		
+		<h2>See other scenarios</h2>
+		<a href="3b.html">What happens if I forget to turn something in?</a><br><br>
+		<a href="3c.html">What happens when my peer turns in something to me?</a><br><br>
+		<a href="3d.html">What happens if my peer forgets to turn something in?</a>
+
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

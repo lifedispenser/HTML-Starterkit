@@ -1,16 +1,16 @@
 
 .narrator, .narrator-bar {
-	position:absolute;
+	position:fixed;
 	bottom: 0;
 	box-shadow: 0 2px 5px $grey;
 	z-index: 3;
 }
 .narrator-bar {
 	right: 10%;
-	width: 200px;
+	width: 250px;
 	height: 40px;
 	display:flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	cursor: pointer;
 	background: white;
@@ -20,56 +20,14 @@
 }
 .narrator {
 	background: rgba(255,255,255, .9);
-	right: 200px;
-	max-height: 200px;
-	padding: 40px;	
-	
-	width: 600px;
-	.close {
-		$size: 15;
-		position: absolute;
-		/* centering */ 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		line-height: 0;
-		/* size */
-		top: -$size + px;
-		right: -$size + px;
-		width: $size*2 + px;
-		height: $size*2 + px;
-		border-radius: $size*3 + px;
-		font-size: 22px;
-		/* color */
-		background: white;
-		border: 2px solid $grey;
-		color: $grey;
-		cursor: pointer;
-		&:hover {
-			border: 2px solid $red;
-			color: $red;
-		}
-	}
-	.n {
-		position: absolute;
-		top: 18px;
-		right: 40px;
-		font-style: italic;
-		color: #aaa;
-	}
-	.nav {
-
+	right: 10%;
+	margin-bottom: 50px!important;
+	.pk-nav {
+		padding:10px;
 		a {
 			font-size:14px;
 			padding: 0 6px;
 		}
-	}
-	.content { 
-		display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-		height: 120px;
-		overflow-y: auto;
 	}
 }
 
@@ -78,7 +36,7 @@
 	.narrator {
 		right: 10%;
 		width: 80%;
-		.nav a {
+		.pk-nav a {
 			font-size:11px;
 		}
 	}

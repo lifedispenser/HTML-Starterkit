@@ -1,0 +1,88 @@
+{% set title = "Peer Pact Home" %}
+{% block narrator %}
+	<p>Scenario: <b>You’ve just signed up and logged in.</b></p>
+{% endblock %}
+{% block content %}
+	<div class="row">
+		<h2>Welcome to PeerPact!</h2>
+		<p>I want to:</p>
+		<div class="chooser">
+			<script>
+				$().ready(function() {
+					$(".chooser").find("a:contains(" + store.get("project-type") + ")").addClass("selected");
+					$(".change-project-type").html(store.get("project-type"));
+					$(".change-project-date").html(store.get("project-day") + ", " + store.get("project-time"));
+					$(".chooser a").click(function() {
+						$(".chooser a.selected").removeClass("selected");
+						$(this).addClass("selected");
+						store.set("project-type", $(this).html());
+						$(".change-project-type").html(store.get("project-type"));
+					});
+					//day
+					$("#project-day").val(store.get("project-day"));
+					$("#project-day").change(function() {
+						store.set("project-day", $(this).val());
+						$(".change-project-date").html(store.get("project-day") + ", " + store.get("project-time"));
+					});
+					$("#project-time").val(store.get("project-time"));
+					$("#project-time").change(function() {
+						store.set("project-time", $(this).val());
+						$(".change-project-date").html(store.get("project-day") + ", " + store.get("project-time"));
+					});
+					$("#project-commit").prop("checked", store.get("project-commit"));
+					$("#project-commit").change(function() {
+						store.set("project-commit", this.checked);
+						
+				});
+				})
+			</script>
+			<a>Write</a>
+			<a>Draw</a>
+			<a>Create</a>
+			<a>Code</a>
+		</div>
+		<p>every week. My turn in date for work will be on:</p>
+		<select id="project-day">
+			<option value=""></option>
+			<option value="Sunday">Sunday</option>
+			<option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+			<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
+			<option value="Friday">Friday</option>
+			<option value="Saturday">Saturday</option>
+		</select>
+		at
+		<select id="project-time">
+			<option value="6am">6am</option>
+			<option value="7am">7am</option>
+			<option value="8am">8am</option>
+			<option value="9am">9am</option>
+			<option value="10am">10am</option>
+			<option value="11am">11am</option>
+			<option value="12pm">12pm</option>
+			<option value="1pm">1pm</option>
+			<option value="2pm">2pm</option>
+			<option value="3pm">3pm</option>
+			<option value="4pm">4pm</option>
+			<option value="5pm">5pm</option>
+			<option value="6pm">6pm</option>
+			<option value="7pm">7pm</option>
+			<option value="8pm">8pm</option>
+			<option value="9pm">9pm</option>
+			<option value="10pm">10pm</option>
+			<option value="11pm">11pm</option>
+			<option value="12am">12am</option>
+			<option value="1a<">1a</option>
+			<option value="2am">2am</option>
+			<option value="3am">3am</option>
+			<option value="4am">4am</option>
+			<option value="5am">5am</option>
+		</select>
+		<br><br><br>
+		<input type="checkbox" id="project-commit"> I pledge to <b class="change-project-type">write</b> something every week <br> and have something to show each week by <b class="change-project-date">Thursday, 9pm</b>.
+		<br><br>
+		<a href="2.html">Next</a>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}
