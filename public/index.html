@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peer Pact Home</title>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jsform.min.js"></script>
     <script type="text/javascript" src="js/store.min.js"></script>
     <script type="text/javascript" src="js/sitemap.json"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
@@ -241,8 +242,35 @@
   </head>
   <body>
     <script>
-      function loadStore() {
-        $(".pkls").
+      // add sync into localstorage to forms
+      // this is a wrapper around jsForms
+      function pkls() {
+        $(".pkls").each(function() {
+          var $this = $(this);
+          if($(this).is("form")) {
+            function getFormName(attr) {
+              if(attr.includes('.')) {
+                var p = attr.split(".")[0];
+              } else {
+                var p = "data";
+              }  
+              return p;
+            }
+            var p = getFormName($(this).find("[name]").first().attr("name"));
+            // set up form to load values.            
+            $(this).jsForm({
+              data: store.get(p),
+              prefix: p
+            })  
+            // form button save to localstorage.
+            $(this).find(".pksave").click(function(e) {
+              e.preventDefault();
+              var arr = $this.jsForm("get");
+              var p = getFormName($(this).find("[name]").first().attr("name"));
+              store.set(p, arr);
+            })
+          }
+        });
       }
       function hideNarrator() {
         $(".narrator").addClass("hide");
@@ -258,6 +286,7 @@
         $(".narrator-bar .open i").removeClass().addClass("fa fa-commenting-o")
       }
       $().ready(function() {
+        pkls();
         if($(".narrator .message-body").text().trim().length == 0) {
           hideNarrator(); // hide narrator also changes the icon
         }

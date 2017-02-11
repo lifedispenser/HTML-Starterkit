@@ -1,0 +1,72 @@
+{% set title = "Landing Page" %}
+{% block content %}
+	<div class="container">
+		<form class="pkls">
+			<label class="label">Name</label>
+			<p class="control">
+				<input class="input" type="text" placeholder="Text input" name="project.name">
+			</p>
+			<label class="label">Subject</label>
+			<p class="control">
+				<span class="select">
+					<select name='project.select'>
+						<option>Select dropdown</option>
+						<option>With options</option>
+					</select>
+				</span>
+			</p>
+			<label class="label">Message</label>
+			<p class="control">
+				<textarea class="textarea" placeholder="Textarea" name="project.text"></textarea>
+			</p>
+			<p class="control">
+				<label class="checkbox">
+					<input type="checkbox" name="project.check">
+					Remember me
+				</label>
+			</p>
+			<p class="control selectcollection" data-field="project.multi">
+				<label class="checkbox">
+					<input type="checkbox" name="multi" value="a">
+					value a					
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="multi" value="b">
+					value b				
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="multi" value="c">
+					value c					
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="multi" value="d">
+					value d					
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="multi" value="e">
+					value e				
+				</label>
+			</p>
+
+			<p class="control">
+				<label class="radio">
+					<input type="radio" name="project.question" value="yes">
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="project.question" value="no">
+					No
+				</label>
+			</p>
+			<div class="control is-grouped">
+				<p class="control">
+					<button class="button is-primary pksave">Submit</button>
+				</p>
+				<p class="control">
+					<button class="button is-link">Cancel</button>
+				</p>
+			</div>
+		</form>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

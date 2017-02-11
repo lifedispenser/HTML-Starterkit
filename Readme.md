@@ -4,6 +4,12 @@
 
 Prototype kit (PK) A set of scripts, components, and modules to do rapid prototyping of workflows.
 
+## TODO:
+- Bulma Documentation 
+- Bulma Workflow Page Templates Integration
+- listables of items
+- Login Component (Document and Implement)
+
 ## Intro
 
 In the vast world of prototyping tools, including paper, sketch, invision, oragami, and more, PK is optimized for **exploring workflows**. It gives the bare bones needed to quickly build HTML/CSS pages that mimic the expected behavior of the real app.
@@ -275,9 +281,10 @@ PK uses localstorage to save data, mimicing form submission, login, etc. The var
 Forms with a `pkls` class (stands for: Prototype-Kit-Load-Save) will detect, save, and load any user inputted data submitted. To use:
 
 ```
-  <form class="pkls" name="project">
-    <input name="title" />
-    <textarea name="description"></textarea>
+  <form class="pkls">
+    <input name="project.title" />
+    <textarea name="project.description"></textarea>
+    
     <button>Save</button>
   </form>
   // on form submit, saves and loads data as: 
