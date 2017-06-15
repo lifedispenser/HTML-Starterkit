@@ -114,3 +114,12 @@ footer {
 .light-grey {
 	color: $grey-lighter;
 }
+
+.main-heading {
+	img {
+		border-radius:200px;
+	}
+	.name {
+		font-size:16px;
+	}
+}
