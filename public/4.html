@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/jsform.min.js"></script>
+    <script type="text/javascript" src="/js/store.min.js"></script>
+    <script type="text/javascript" src="/js/sitemap.json"></script>
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <!-- uncomment for bootstrap & font-awesome
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+    
+    <script>
+  function setupChooser() {
+    $("[pkchooser]").each(function() {
+      var chooser = $(this);
+      console.log(chooser);
+      //if there are choices, get them
+      if($(this).find("[choice]").length > 0) {
+        var choices = $(this).find("[choice]");
+      } else {
+        var choices = $(this).children();
+      }
+      choices.each(function() {
+        if($(this).find(".pksave").length > 0) {
+          $(this).find(".pksave").click(function() {
+            var choice = $(this).parents('[choice]');
+            saveChoice(chooser, choice);
+          })
+        } else {
+          $(this).click(function() {
+            var choice = $(this);
+            saveChoice(chooser, choice);
+          })
+        }
+      })
+    });
+    $("[choice]").each(function(){ 
+      if($(this).parents('[pkchooser]').length == 0) {
+        var html = $(store.get($(this).attr("choice")));
+        $(html).find(".pksave").remove();
+        $(this).replaceWith(html);
+      }
+    });
+  }
+
+  function saveChoice(chooser, choice) {
+    // console.log("is this called twice");
+    store.set(chooser.attr('pkchooser'), choice[0].outerHTML);
+    console.log(store.get(chooser.attr('pkchooser')));
+  }
+
+  $().ready(function() {
+    setupChooser();
+  })
+</script>
+    <script>
+      function lookup() {
+        var curl = window.location.pathname.split(".html")[0];
+        if (curl == "/") { return "index" }
+        arr = curl.split("/");
+        loc = arr[arr.length-1];
+        return loc;
+      }
+      function exists(loc) {
+        // console.log(loc + ".html", navdata[loc + ".html"]);
+        return (navdata[loc + ".html"] != null);
+      }
+      function goNext(loc) {
+        var loc = lookup();
+        if(loc == "index") {
+          if(exists("1")) return '1';
+        }
+        var loc = loc.split("__").join("-"); // replace '__' with '-'
+        var arr = loc.split("_");
+        var last = arr.pop();
+        var next = "";
+        //if last contains a letter
+        if (last.match(/[a-z]+/)) {
+          next = loc + "_1";
+          if(exists(next)) { return next } else {
+            return false; //no linear workflow from decision
+          }
+        } else if (!isNaN(last)) { 
+          next = arr.join("_") + (arr.length > 0 ? "_" : "") + last + "__1";
+          if(exists(next)) { return next; } else {
+            //increment number 
+            next = arr.join("_") + (arr.length > 0 ? "_" : "") + (parseInt(last) + 1);
+            if(exists(next)) { return next; } else { 
+              return false; // end of linear workflow
+            }
+          }
+        } else if(last.includes("-")) {
+          insert = last.split("-");
+          insertnum = insert.pop();
+          // get next inserted number
+          next = arr.join("_") + (arr.length > 0 ? "_" : "") + insert.join("__") + (insert.length > 0 ? "__" : "") + (parseInt(insertnum) + 1);
+          if(exists(next)) { return next; } else {
+            //otherwise, get next linear workflow number
+            next = arr.join("_") + (arr.length > 0 ? "_" : "") + (parseInt(insert[0]) + 1);
+            if(exists(next)) { return next; } else {
+              // end of linear workflow
+              return false;
+            }
+          }
+        }
+      }
+      //testing for goNext
+      // console.log("should be 1__1", goNext('1'));
+      // console.log("should be 3_a_1", goNext('3_a'));
+      // console.log("should be false", goNext('3_b'));
+      // console.log("should be 1__2", goNext('1__1'));
+      // console.log("should be 2", goNext('1__2'));
+      // console.log("should be 3", goNext('2'));
+      // console.log("should be 4", goNext('3'));
+      // console.log("should be 1", goNext('index'));
+      // console.log("should be 8", goNext('7'));
+      
+      function goPrev() {
+        var loc = lookup();
+        if(loc == "1") {
+          if(exists("index")) return 'index';
+        }
+        var loc = loc.split("__").join("-"); // replace '__' with '-'
+        var arr = loc.split("_");
+        var last = arr.pop();
+        var next = "";
+        //if last contains a letter
+        if (last.match(/[a-z]+/)) {
+          return false;
+        } else if(!isNaN(last)) { // if last is a number
+          var counter = 1;
+          var prev = (parseInt(last) - 1);
+          if(prev < 0) {
+            prev = 0;
+          }
+          // find out if there are any inserts
+          next = arr.join("_") + (arr.length > 0 ? "_" : "") + prev + "__" + counter;
+          while(exists(next)) { // find last insert
+            counter += 1;
+            next = arr.join("_") + (arr.length > 0 ? "_" : "") + prev + "__" + counter;
+          } // went one too far, go back one
+          next = arr.join("_") + (arr.length > 0 ? "_" : "") + prev + "__" + (counter-1);
+          if(exists(next)) { return next; } else {
+            if(prev == 0) {
+              next = arr.join("_");   
+            } else {
+              next = arr.join("_") + (arr.length > 0 ? "_" : "") + prev;
+            }
+            if(exists(next)) { return next; } else { return false; } // otherwise no
+          }
+        } else if(last.includes("-")) {
+          insert = last.split("-");
+          insertnum = insert.pop();
+          var prev = parseInt(insertnum) - 1;
+          if(prev == 0) {
+            next = arr.join("_") + (arr.length > 0 ? "_" : "") + insert.join("__");
+          } else {
+            next = arr.join("_") + (arr.length > 0 ? "_" : "") + insert.join("__") + (insert.length > 0 ? "__" : "") + prev;
+          }  
+          if(exists(next)) { return next; } else {
+            // end of linear workflow
+            return false;
+          }
+        
+        }
+      }
+      // //testing for goPrev
+      // console.log("should be 1__2", goPrev('2'));
+      // console.log("should be 3_a_1", goPrev('3_a_2'));
+      // console.log("should be 3_a", goPrev('3_a_1'));
+      // console.log("should be false", goPrev('3_a'));
+      // console.log("should be false", goPrev('3_b'));
+      // console.log("should be 1__1", goPrev('1__2'));
+      // console.log("should be 1", goPrev('1__1'));
+      // console.log("should be 2", goPrev('3'));
+      // console.log("should be 3", goPrev('4'));
+      // console.log("should be index", goPrev('1'));
+      // console.log("should be 8", goPrev('9'));
+      
+      function goStart() {
+        return 'index';
+      }
+      
+      function goParent(loc) {
+        // var loc = lookup();
+        if(loc == "index") {
+          return false
+        }
+        var loc = loc.split("__").join("-"); // replace '__' with '-'
+        var arr = loc.split("_");
+        var last = arr.pop();
+        var next = "";
+        //if last contains a letter
+        if (last.match(/[a-z]+/)) {
+          next = arr.join("_");
+          if(exists(next)) { return next } else {
+            return false; //things are broken
+          }
+        } else { // everything else doesn't have a parent...
+          return false;
+        }
+      }
+      //testing for goParent
+      // console.log("should be false", goParent('2'));
+      // console.log("should be false", goParent('3_a_2'));
+      // console.log("should be false", goParent('3_a_1'));
+      // console.log("should be 3", goParent('3_a'));
+      // console.log("should be 3", goParent('3_b'));
+      // console.log("should be false", goParent('1__2'));
+      // console.log("should be false", goParent('1__1'));
+      // console.log("should be false", goParent('3'));
+      // console.log("should be false", goParent('4'));
+      // console.log("should be false", goParent('1'));
+      // console.log("should be false", goParent('9'));
+
+      function goChild(loc, child) {
+        console.log(loc, child);
+        if(child === undefined) {
+          child = "a";
+        }
+        // var loc = lookup();
+        var loc = loc.split("__").join("-"); // replace '__' with '-'
+        var arr = loc.split("_");
+        var last = arr.pop();
+        var next = "";
+        //if last contains a letter switch between various children
+        if (last.match(/[a-z]+/)) { 
+          next = arr.join("_") + (arr.length > 0 ? "_" : "") + child;
+          if(exists(next)) { return next } else {
+            return false; //selected wrong child
+          }
+        } else { // otherwise, select child on the parent
+          var next = loc + "_" + child;
+          if (exists(next)) { return next; } else {
+            return false; // no children
+          }
+        }
+      }
+      // //testing for goChild
+      // console.log("should be false", goChild('2', 'a'));
+      // console.log("should be 3_d", goChild('3_a', 'd'));
+      // console.log("should be false", goChild('3_a_1'));
+      // console.log("should be 3_a", goChild('3_a', 'a'));
+      // console.log("should be 3_c", goChild('3_b', 'c'));
+      // console.log("should be 3_b", goChild('3', 'b'));
+      // console.log("should be 3_b", goChild('3_a', 'b'));
+      // console.log("should be false", goChild('3', 'e'));
+      // console.log("should be false", goChild('4'));
+      // console.log("should be false", goChild('1'));
+      // console.log("should be false", goChild('9'));
+
+      function setupAutoNav() {
+        $(".pknav").click(function() {
+          var chooser = {
+            'next': goNext,
+            'prev': goPrev,
+            'parent': goParent,
+            'start': goStart,
+            'index': goStart,
+            'child': goChild
+          };
+          var classes = $(this).attr('class').split(' ');
+          for (var i=0; i< classes.length;i++) {
+            var c = classes[i];
+            if(c.includes("child")) {
+              var d = c.split("-");
+              console.log(d);
+              var link = chooser[d[0]](d[1]);
+            } else if (c !== '' && c !== 'pknav') {
+              if(chooser[c] !== undefined) {
+                var link = chooser[c]();
+              }
+            }
+            if(link) {
+              console.log("page detected, going to:", link + ".html");
+              window.location.href = link + ".html";
+            }  
+          }
+        });
+      }
+      $().ready(function() {
+        setupAutoNav();
+      })
+    </script>
+  </head>
+  <body>
+    <script>
+    // add sync into localstorage to forms
+    // this is a wrapper around jsForms
+    function pkls() {
+    $(".pkls").each(function() {
+    var $this = $(this);
+    if($(this).is("form")) {
+    var getFormName = function(attr) {
+    if(attr.includes('.')) {
+    var p = attr.split(".")[0];
+    } else {
+    var p = "data";
+    }
+    return p;
+    }
+    var p = getFormName($(this).find("[name]").first().attr("name"));
+    // set up form to load values.
+    $(this).jsForm({
+    data: store.get(p),
+    prefix: p
+    })
+    // form button save to localstorage.
+    $(this).find(".pksave").click(function(e) {
+    e.preventDefault();
+    var arr = $this.jsForm("get");
+    var p = getFormName($this.find("[name]").first().attr("name"));
+    store.set(p, arr);
+    })
+    }
+    });
+    $("[pkload]").each(function() {
+    $(this).text(store.get($(this).attr("pkload")));
+    })
+    }
+    function hideNarrator() {
+    $(".narrator").addClass("hide");
+    // change icon to show
+    if($(".narrator .message-body").text().trim().length > 0) {
+    $(".narrator-bar .open i").removeClass().addClass("fa fa-commenting")
+    } else {
+    $(".narrator-bar .open i").removeClass().addClass("fa fa-comment-o")
+    }
+    }
+    function showNarrator() {
+    $(".narrator").removeClass("hide");
+    $(".narrator-bar .open i").removeClass().addClass("fa fa-commenting-o")
+    }
+    $().ready(function() {
+    pkls();
+    if($(".narrator .message-body").text().trim().length == 0) {
+    hideNarrator(); // hide narrator also changes the icon
+    }
+    $(".narrator .delete").click(function() {
+    hideNarrator();
+    });
+    $(".narrator-bar .open").click(function() {
+    if($(".narrator").hasClass("hide")) {
+    showNarrator();
+    } else {
+    hideNarrator();
+    }
+    })
+    });
+    </script>
+    <div class="narrator-bar">
+      <a class="pknav restart">Home</a>
+      <a class="pknav prev">Prev</a>
+      <a class="pknav next">Next</a>
+      <a class="open"><span class="icon"><i class="fa fa-commenting"></i></span></a>
+    </div>
+    <div class="narrator message is-info">
+      <div class="message-header">
+        <p>Narrator</p>
+        <button class="delete"></button>
+      </div>
+      <div class="message-body">
+        
+        
+      </div>
+    </div>
+    
+    
+    
+	<script>
+			Date.prototype.getWeekDay = function() {
+		    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		    return weekday[this.getDay()];
+		}
+		store.set("today", new Date().getWeekDay());
+		function saveDate() {
+			store.set("project.newday", store.get("today"));
+		}
+	</script>
+	<br><br><br>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-3">
+				<nav class="panel">
+					<p class="panel-heading">
+						Step 4 of 4
+					</p>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<p class="title is-5 is-marginless">Choose Project</p>
+							<p>Select a project to start</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<div class="card" choice="user_project">
+							<div class="card-content">
+								<div class="media">
+									<div class="media-left">
+										<figure class="image" style="height: 40px; width: 40px;">
+											<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+										</figure>
+									</div>
+									<div class="media-content">
+										<p class="title is-4" pkv="title">Let's Write!</p>
+										<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
+									</div>
+								</div>
+								<div class="content">
+									Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign up</h2>
+							<p>Login with email or Google+</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Signed in. Welcome Spencer!</i>
+						</p>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Peer Up</h2>
+							<p>So you don't go alone</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Peer coming your way!</i>
+						</p>
+					</div>
+					<a class="panel-block is-active">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-file-text-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign Pact</h2>
+							<p>Commit to your project</p>
+						</div>
+					</a>
+					<a class="panel-block is-disabled">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-send-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Let's Go</h2>
+							<p>Get started on your first week!</p>
+						</div>
+					</a>
+				</nav>
+			</div>
+			<div class="column is-9">
+				<h1 class="title is-4">Step 4: Commit to your pact</h1>
+				<p class="subtitle is-5">Committing helps you build resolution. At the end of the day, only you can keep your pact.</p>
+				<br><br><br>
+				<div class="card">
+					<div class="card-content">
+						<h2 class="title is-4 has-text-centered">The Pact</h2>
+						I want to work on this project and will check in work consistently.
+						<br><br>
+						I will check in every week starting from today (<span pkload="today">Monday</span>). So <b>every <span pkload="today">Monday</span></b>, I will show a sample of work to my peer that indicates I'm working towards my goal.
+						<br><br>
+						<label class="checkbox">
+							<input type="checkbox">
+							I agree with this pact.
+						</label>
+						<br><br>
+						<a class="button is-primary pknav next" onclick="saveDate()"> Sign Peer Pact </a>
+					</div>
+				</div>
+				<br><br><br><br>
+				<div class="content">
+					<i>
+					Wow, did that person just... commit to something? Like, actually commit? That's unbelievable man... Like totally.
+					</i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  </body>
+  
+  
+</html>

@@ -1,0 +1,43 @@
+{% set title = "front end engineer" %}
+{% block content %}
+	<section class="section company-intro">
+		<div class="max-width800">
+			<div class="columns">
+				<div class="column is-6">
+					<h2 class="title is-3" style="line-height:40px;">Why Terminal 1 profiles are the only profiles you should send in to companies</h2>
+				</div>
+				<div class="column level is-mobile has-text-right">
+					<div class="level-item has-text-right">
+						<a class="button is-primary is-outline company-login">Apply with Terminal 1</a>
+					</div>
+				</div>
+			</div>
+			<div class="columns">
+				
+			</div>
+		</div>
+	</section>
+	<section class="section think-different">
+		<div class="container has-text-centered">
+			<h2 class="subtitle">At Terminal 1, we think differently about recruitment.</h2>
+		</div>
+	</section>
+	<section class="section think-different">
+		<div class="columns">
+			<div class="column level is-6">
+				<h2 class="title is-3">Our profiles </h2>
+			</div>
+			<div class="column is-6">
+				<img src="https://unsplash.it/200/300?image=0
+" alt="">
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+{% block nav %}
+	{% include 'jobs-nav.njk' %}
+{% endblock %}
+{% block narrator %}
+{% endblock %}
+{% extends "../partials/jobs-template.njk" %}

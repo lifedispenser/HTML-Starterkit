@@ -1,0 +1,127 @@
+{% set title = "Landing Page" %}
+{% block content %}
+	<script>
+			Date.prototype.getWeekDay = function() {
+		    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		    return weekday[this.getDay()];
+		}
+		store.set("today", new Date().getWeekDay());
+		function saveDate() {
+			store.set("project.newday", store.get("today"));
+		}
+	</script>
+	<br><br><br>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-3">
+				<nav class="panel">
+					<p class="panel-heading">
+						Step 4 of 4
+					</p>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<p class="title is-5 is-marginless">Choose Project</p>
+							<p>Select a project to start</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<div class="card" choice="user_project">
+							<div class="card-content">
+								<div class="media">
+									<div class="media-left">
+										<figure class="image" style="height: 40px; width: 40px;">
+											<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+										</figure>
+									</div>
+									<div class="media-content">
+										<p class="title is-4" pkv="title">Let's Write!</p>
+										<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
+									</div>
+								</div>
+								<div class="content">
+									Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign up</h2>
+							<p>Login with email or Google+</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Signed in. Welcome Spencer!</i>
+						</p>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Peer Up</h2>
+							<p>So you don't go alone</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Peer coming your way!</i>
+						</p>
+					</div>
+					<a class="panel-block is-active">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-file-text-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign Pact</h2>
+							<p>Commit to your project</p>
+						</div>
+					</a>
+					<a class="panel-block is-disabled">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-send-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Let's Go</h2>
+							<p>Get started on your first week!</p>
+						</div>
+					</a>
+				</nav>
+			</div>
+			<div class="column is-9">
+				<h1 class="title is-4">Step 4: Commit to your pact</h1>
+				<p class="subtitle is-5">Committing helps you build resolution. At the end of the day, only you can keep your pact.</p>
+				<br><br><br>
+				<div class="card">
+					<div class="card-content">
+						<h2 class="title is-4 has-text-centered">The Pact</h2>
+						I want to work on this project and will check in work consistently.
+						<br><br>
+						I will check in every week starting from today (<span pkload="today">Monday</span>). So <b>every <span pkload="today">Monday</span></b>, I will show a sample of work to my peer that indicates I'm working towards my goal.
+						<br><br>
+						<label class="checkbox">
+							<input type="checkbox">
+							I agree with this pact.
+						</label>
+						<br><br>
+						<a class="button is-primary pknav next" onclick="saveDate()"> Sign Peer Pact </a>
+					</div>
+				</div>
+				<br><br><br><br>
+				<div class="content">
+					<i>
+					Wow, did that person just... commit to something? Like, actually commit? That's unbelievable man... Like totally.
+					</i>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

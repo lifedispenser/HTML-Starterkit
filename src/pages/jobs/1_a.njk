@@ -1,0 +1,81 @@
+{% set title = "front end engineer" %}
+{% block content %}
+	<div class="section company-intro">
+		<div class="columns">
+			<div class="column is-8 name">
+				<p>
+					<span class="title is-bold">Front End Engineer</span>
+				</p>
+				<p class="tagline">Hong Kong | Data | Full Time</p>
+			</div>
+			<div class="column is-4 has-text-centered"><a class="button is-primary">Login with LinkedIn to Apply.</a></div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="content">
+			<h1>This new JD needs to have the following:</h1>
+			<ul>
+				<li>Required Badge to apply</li>
+				<li>Required Skills to have</li>
+				<li>Nice skills to have</li>
+				<li>Compensation & Benefits</li>
+				<li></li>
+			</ul>
+			<p>As a Big Data Engineer at 9GAG you will help evaluate and build our data platform to sift and process terabytes of behavioral, textual, visual and unstructured data from billions of interactions with our global user base. As a member of the data team, you’ll have immense impact - literally shaping the data with which the company makes innumerable business decisions.
+			</p>
+			<p>
+				We’re looking for a detailed oriented Big Data Engineer who understands the value and impact of good data. You’ll help shape the entire lifecycle of data: from building robust scalable data pipelines in our backend, building dashboards to enable better decision making, to helping to implement a machine learning model serving real time personalized recommendations to our tens of million of users.
+			</p>
+			<p>
+				Building 9GAG’s data infrastructure is an enormous challenge. You’ll have to balance the need to move fast today while continuing to build for tomorrow. You understand the tradeoffs between different open source Big Data technologies and aren’t afraid to build it yourself if needed.
+			</p>
+			<h3>Responsibilities</h3>
+			<ul>
+				<li>Build end-to-end, high-performance, robust and scalable data processing systems.</li>
+				<li>Collaborate with others on others on high impact data projects.</li>
+				<li>Building tools to help make better business decisions or developing a real time machine learning model in production.</li>
+				<li>Identify the gaps and build the tools to increase the speed of analysis. For example, tools like automated AB testing or anomaly detection.</li>
+			</ul>
+			<h3>Requirements</h3>
+			<ul>
+				<li>A friendly, approachable and hardworking attitude.</li>
+				<li>Programming experience, preferably in PHP, Python or Scala.</li>
+				<li>Experience with designing and maintaining complex data pipelines.</li>
+				<li>Ability to work with varied forms of data infrastructure, including: RDBMS (PostgreSQL, MySQL); NoSQL datastores(Cassandra, ElasticSearch, Redis, Redshift); MapReduce(Hadoop, Spark); Logging/messaging systems (Kafka, Scribe, Flume RabbitMQ).</li>
+				<li>Passion for building tools and automating everything.</li>
+				<li>Interest in machine learning is a plus.</li>
+				<li>You can teach us something new! We love to hire people who are way more knowledgeable than us in some area and can be good teachers and mentors.</li>
+				<li>No haters.</li>
+			</ul>
+			<h3>Desired</h3>
+			<ul>
+				<li>Contributions to open source projects</li>
+				<li>Active user of 9GAG</li>
+			</ul>
+			<p>Found in 2008, 9GAG's mission is to make the world happier.</p>
+			<p>9GAG’s global headquarter is in Hong Kong. We are backed by: Freestyle Capital, True Ventures, First Round Capital, Greycroft Partners, 500 Startups, Y Combinator and other prestigious angel investors in the United States.</p>
+			<p>At 9GAG, we value H2O: Humble to embrace the better ideas of others, Hustle to go all-in to achieve the goal at hand, Open to welcome differences and possibilities. We believe a great workplace combines great colleagues and hard problems.</p>
+			<p>We are hungry for high performance people who share our values to join us to make big global impact.</p>
+		</div>
+	</div>
+	<section class="section uses-t1" style="background-color:#f3f3f3;">
+		<div class="container has-text-centered">
+			<h2 class="subtitle">Qupital uses Terminal 1 profiles to help manage and screen qualified candidates.</h2>
+		</div>
+		<div class="container">
+			<div class="content">
+				<h4 class="subtitle">To get started:</h4>
+				<ol>
+					<li>Fill in a basic profile</li>
+					<li>Add at least 1 badge for each role (badges can either come from MC quiz, take-home assessments, or previous accomplishments)</li>
+					<li>Optionally add extras like references to help you stand out</li>
+				</ol>
+				<a href="" class="button is-primary">Login with LinkedIn to Apply.</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block nav %}
+	{% include 'jobs-nav.njk' %}
+{% endblock %}
+{% extends "../partials/jobs-template.njk" %}

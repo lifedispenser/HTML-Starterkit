@@ -1,0 +1,129 @@
+{% set title = "Landing Page" %}
+{% block content %}
+	<br><br><br>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-3">
+				<nav class="panel">
+					<p class="panel-heading">
+						Let's Go!
+					</p>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<p class="title is-5 is-marginless">Choose Project</p>
+							<p>Select a project to start</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<div class="card" choice="user_project">
+							<div class="card-content">
+								<div class="media">
+									<div class="media-left">
+										<figure class="image" style="height: 40px; width: 40px;">
+											<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+										</figure>
+									</div>
+									<div class="media-content">
+										<p class="title is-4" pkv="title">Let's Write!</p>
+										<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
+									</div>
+								</div>
+								<div class="content">
+									Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign up</h2>
+							<p>Login with email or Google+</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Signed in. Welcome Spencer!</i>
+						</p>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Peer Up</h2>
+							<p>So you don't go alone</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Peer coming your way!</i>
+						</p>
+					</div>
+					<a class="panel-block is-completed">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Sign Pact</h2>
+							<p>Commit to your project</p>
+						</div>
+					</a>
+					<div class="panel-block">
+						<p class="has-text-centered">
+							<i>Commited and ready to go.</i>
+						</p>
+					</div>
+					<a class="panel-block is-active">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-send-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Let's Go</h2>
+							<p>Get started on your first week!</p>
+						</div>
+					</a>
+				</nav>
+			</div>
+			<div class="column is-9">
+				<h1 class="title is-4">Get Started</h1>
+				<p class="subtitle is-5">A reminder of what you need to do this week.</p>
+				<br><br>
+				<h2 class="title is-5">You commited to:</h2>
+				<div class="card" choice="user_project">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-left">
+								<figure class="image" style="height: 40px; width: 40px;">
+									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+								</figure>
+							</div>
+							<div class="media-content">
+								<p class="title is-4" pkv="title">Let's Write!</p>
+								<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
+							</div>
+						</div>
+						<div class="content">
+							Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
+						</div>
+					</div>
+				</div>
+				<br>
+				<h2 class="title is-5">And your check in date is on <b><span pkload="newdate">Monday</span></b>.</h2>
+				<br><br>
+				<a class="button is-primary pknav next">Get to it!</a>
+				<br><br>
+				<h2 class="title is-5">Need help keeping your goal?</h2>
+				<p>
+					Schedule <b>2 blocks of time</b> labelled "Peer Pact Work" in google calendar for this week. And make sure you set those times apart for your project.
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

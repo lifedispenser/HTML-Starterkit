@@ -20,7 +20,7 @@ gulp.task('sitemap', function() {
 });
 // Automate HTML compiling
 gulp.task('nunjucks', function() {
-  return gulp.src('src/pages/*.njk')
+  return gulp.src('src/pages/**/*.njk')
     .pipe(plumber())
     .pipe(nunjucksRender({
       path: ['src/partials']
@@ -30,7 +30,7 @@ gulp.task('nunjucks', function() {
 
 // Automate CSS compiling
 gulp.task('sass', function() {
-  return gulp.src('src/scss/*.scss')
+  return gulp.src('src/scss/**/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('public/css'))

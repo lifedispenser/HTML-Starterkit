@@ -1,0 +1,29 @@
+{% set title = "Terminal 1" %}
+{% block content %}
+	<section class="hero is-primary header-image">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title is-2">
+				Terminal 1
+				</h1>
+				<h2 class="subtitle is-5">
+				We connect great programmers to strong engineering cultures in Hong Kong.
+				</h2>
+				<p class="has-text-centered">
+					<a class="pknav next button is-primary is-medium">
+						<span>
+							Sign up with LinkedIn.
+						</span>
+						<span class="icon">
+							<i class="fa fa-arrow-right"></i>
+						</span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block narrator %}
+	<p><a href="index_a.html">Option A</a></p>
+{% endblock %}
+{% extends "../partials/my-template.njk" %}

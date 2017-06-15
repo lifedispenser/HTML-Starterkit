@@ -1,0 +1,44 @@
+<script>
+  function setupChooser() {
+    $("[pkchooser]").each(function() {
+      var chooser = $(this);
+      console.log(chooser);
+      //if there are choices, get them
+      if($(this).find("[choice]").length > 0) {
+        var choices = $(this).find("[choice]");
+      } else {
+        var choices = $(this).children();
+      }
+      choices.each(function() {
+        if($(this).find(".pksave").length > 0) {
+          $(this).find(".pksave").click(function() {
+            var choice = $(this).parents('[choice]');
+            saveChoice(chooser, choice);
+          })
+        } else {
+          $(this).click(function() {
+            var choice = $(this);
+            saveChoice(chooser, choice);
+          })
+        }
+      })
+    });
+    $("[choice]").each(function(){ 
+      if($(this).parents('[pkchooser]').length == 0) {
+        var html = $(store.get($(this).attr("choice")));
+        $(html).find(".pksave").remove();
+        $(this).replaceWith(html);
+      }
+    });
+  }
+
+  function saveChoice(chooser, choice) {
+    // console.log("is this called twice");
+    store.set(chooser.attr('pkchooser'), choice[0].outerHTML);
+    console.log(store.get(chooser.attr('pkchooser')));
+  }
+
+  $().ready(function() {
+    setupChooser();
+  })
+</script>

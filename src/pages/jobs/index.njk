@@ -1,0 +1,158 @@
+{% set title = "get started" %}
+{% block content %}
+	<div class="columns">
+		<aside class="column is-2 aside hero is-fullheight is-hidden-mobile">
+			<div>
+				<div class="uploader has-text-centered">
+					<a class="button">
+						<i class="fa fa-upload"></i>
+					</a>
+				</div>
+				<div class="main">
+					<div class="title">Main</div>
+					<a href="#" class="item active"><span class="icon"><i class="fa fa-home"></i></span><span class="name">Dashboard</span></a>
+					<a href="#" class="item"><span class="icon"><i class="fa fa-map-marker"></i></span><span class="name">Activity</span></a>
+					<a href="#" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">Timeline</span></a>
+					<a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Folders</span></a>
+				</div>
+			</div>
+		</aside>
+		<div class="column is-10">
+			<div class="section company-intro">
+				<div class="max-width800">
+					<div class="columns">
+						<div class="column is-narrow">
+							<div class="image is-96x96">
+								<img src="/images/logo-qupital.png">
+							</div>
+						</div>
+						<div class="column is-6">
+							<div class="title is-bold company-title">You Technologies Group</div>
+							<p class="company-desc">Fintech startup that allows companies to raise capital with new asset class</p>
+						</div>
+						<div class="column level is-mobile has-text-right">
+							<div class="level-item has-text-right">
+								<a class="button is-primary is-outline company-login">Apply with Terminal 1</a>
+							</div>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column is-7 company-about">
+							We have built a safe, secure and easy to use platform. Qupital allows companies to raise finance against their receivables by connecting them with investors interested in a new asset class. This is another sentence which will be the default size of this kind of text.
+						</div>
+						<div class="column level is-mobile has-text-right">
+							<div class="level-item has-text-centered company-stat">
+								<div>
+									<p class="stat-val">Location</p>
+									<p class="stat-key">Hong Kong</p>
+								</div>
+							</div>
+							<div class="level-item has-text-centered company-stat">
+								<div>
+									<p class="stat-val">Size</p>
+									<p class="stat-key">11-50</p>
+								</div>
+							</div>
+							<div class="level-item has-text-centered company-stat">
+								<div>
+									<p class="stat-val">Established</p>
+									<p class="stat-key">2012</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section jobs">
+				<div class="max-width800">
+					<h2 class="available has-text-centered">Available Roles</h2>
+					<div class="columns">
+						<div class="column">
+							<p class="jobs-title">Head of Corporate Sales</p>
+							<p class="jobs-tags">
+								<span><i class="fa fa-file-code-o" aria-hidden="true"></i>
+								Front End</span>
+								<span><i class="fa fa-location-arrow" aria-hidden="true"></i>
+								Hong Kong</span>
+								<span><i class="fa fa-clock-o" aria-hidden="true"></i> Full Time</span>
+							</p>
+						</div>
+						<div class="level">
+							<div class="level-item">
+								<a class="button is-primary is-outlined">Apply Now</a>
+							</div>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column">
+							<p class="jobs-title">Head of Corporate Sales</p>
+							<p class="jobs-tags">
+								<span>Hong Kong</span>
+								<span>Full Time</span>
+							</p>
+						</div>
+						<div class="level">
+							<div class="level-item">
+								<a class="button is-primary is-outlined">Apply Now</a>
+							</div>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column">
+							<p class="jobs-title">Head of Corporate Sales</p>
+							<p class="jobs-tags">
+								<span>Hong Kong</span>
+								<span>Full Time</span>
+							</p>
+						</div>
+						<div class="level">
+							<div class="level-item">
+								<a class="button is-primary is-outlined">Apply Now</a>
+							</div>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column">
+							<p class="jobs-title">Head of Corporate Sales</p>
+							<p class="jobs-tags">
+								<span>Hong Kong</span>
+								<span>Full Time</span>
+							</p>
+						</div>
+						<div class="level">
+							<div class="level-item">
+								<a class="button is-primary is-outlined">Apply Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container max-width800">
+			<div class="level">
+				<div class="column is-6">
+					<p class="level-item">
+						<div style="font-size: 18px;">
+							<span style="font-weight: bold;">Qupital</span> uses Terminal 1 profiles
+							<br>to help manage and screen qualified candidates.
+						</div>
+					</p>
+				</div>
+				<div class="column is-6">
+					<h4 class="subtitle">To get started:</h4>
+					<p>
+						1. Fill in a basic profile <br>
+						2. Add at least 1 badge for each role<br>
+						3. Optionally add extras like references to help you stand out<br><br>
+					</p>
+					<p>
+						<a href="" class="button is-primary">Apply with Terminal 1</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+{% extends "../partials/jobs-template.njk" %}

@@ -9,3 +9,108 @@ h2 {
 	font-family: "Lato";
 	font-weight: 300;
 }
+
+.panel-block {
+	&:hover {
+		color: black!important;
+	}
+	&.is-completed .panel-icon {
+		color: $green;
+		.title:hover {
+			color: $red;
+		}
+	}
+	&.is-active {
+		background-color: #efefef;
+		.title {
+			font-weight: 600;
+		}
+	}
+	&.is-disabled, &.is-disabled .title, &.is-disabled .panel-icon {
+		color: #aaa;
+	}
+}
+[choice] .pksave {
+	visibility:hidden;
+}
+[choice]:hover .pksave{
+	visibility:visible;
+}
+.max-width960 {
+	margin: 0 auto;
+	max-width:960px;
+}
+.max-width800 {
+	margin: 0 auto;
+	max-width:800px;
+}
+
+.company-intro, .job-intro {
+	background-color: $white-bis;
+	.company {
+		&-title {
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		&-desc {
+			line-height: 24px;
+			font-size: 16px;
+		}
+		&-stat {
+			color: $grey;
+			.stat-key {
+				font-size:16px;
+			}
+			.stat-val {
+				text-transform: uppercase;
+				font-size:11px;
+			}
+		}
+		&-about {
+			font-size: 15px;
+			line-height: 24px;
+		}
+		&-login {
+			margin: 0 30px;
+		}
+	}
+}
+.job-intro .jobs-title {
+	font-weight: bold;
+}
+.jobs {
+	.available {
+		font-size:16px;
+		text-transform: uppercase;
+		color: $grey;
+		padding-bottom:40px;
+	}
+	&-title {
+		font-size:24px;
+		margin-bottom: 7px;
+	}
+	&-tags {
+		span {
+			padding-right: 30px;
+			text-transform: uppercase;
+			font-size:12px;
+		}
+		i {
+			color: $grey-lighter;
+			padding-right: 10px;
+		}
+	}
+}
+.job-text .content{
+	font-size: 16px;
+	line-height: 28px;	
+}
+footer {
+	p {
+		font-size:15px;
+	}
+}
+
+.light-grey {
+	color: $grey-lighter;
+}

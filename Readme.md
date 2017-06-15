@@ -85,7 +85,7 @@ Following the naming convention allows PK to create dynamic links to the next, p
 
 ##### Linear Workflow
 
-PK expects linear workflows have a starting point and also to be ordered by number: ie.
+PK expects linear workflows to have a starting point and also to be ordered by number: ie.
 ```
 // all .njk files will be compiled to .html files in the public folder
 
@@ -275,7 +275,7 @@ Prototype kit assumes a convention of numbered pages. For linear workflows, PK l
 This navigation can be compiled into a site map with helpers that allow it to be easily browsed through in the narration module (TODO).
 
 #### Forms & Variables
-PK uses localstorage to save data, mimicing form submission, login, etc. The variables are stored across the app and easily accessible with an API.
+PK uses localstorage to save data, mimicking form submission, login, etc. The variables are stored across the app and easily accessible with an API.
 
 ##### Forms
 Forms with a `pkls` class (stands for: Prototype-Kit-Load-Save) will detect, save, and load any user inputted data submitted. To use:
@@ -284,7 +284,7 @@ Forms with a `pkls` class (stands for: Prototype-Kit-Load-Save) will detect, sav
   <form class="pkls">
     <input name="project.title" />
     <textarea name="project.description"></textarea>
-    
+
     <button>Save</button>
   </form>
   // on form submit, saves and loads data as: 
@@ -334,6 +334,11 @@ You can also load data anywhere with a `pkload` attribute, like so:
 ```
 The title on your project form was <span pkload="project.title">If no project, this default text will show instead.</span>.
 ```
+
+#### Chooser
+pk-chooser and pk-choice is a class that helps you in user selection. The goal is to provide an easy copy paste workflow for user selection.
+
+  #### Google+ login one click drop in
 
 #### Survey links
 Embed a survey link to typeform or google docs easily with these helper classes in the narration module.

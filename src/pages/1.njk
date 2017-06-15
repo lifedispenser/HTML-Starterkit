@@ -1,180 +1,34 @@
-{% set title = "Landing Page" %}
+{% set title = "Profile" %}
 {% block content %}
-	<div class="hero-body">
-		<div class="container has-text-centered">
-			<h1 class="title">Peer Pact is a peer-to-peer network for people to get stuff done.</h1>
-			<br><br>
-			<div class="columns is-vcentered">
-				<div class="column is-5">
-					<figure class="image is-4by3">
-						<img src="http://placehold.it/800x600" alt="Description">
-					</figure>
+	<section class="section profile-heading">
+		<div class="columns">
+			<div class="column is-2">
+				<div class="image is-128x128 avatar">
+					<img src="https://placehold.it/256x256">
 				</div>
-				<div class="column is-6 is-offset-1">
-					<div class="content is-medium">
-						<h2 class="title is-2">It’s easy to get started:</h2>
-						<p class="has-text-left">
-							Commit to a project with a weekly check in and you’ll receive an anonymous peer who’s also working on something. <br><br>
-							Exchange encouragement and get friendly with each other, but whatever you do, <b>don’t be the one to break the pact.</b>
-						</p>
-						<br>
-						<p class="has-text-centered">
-							<a href="#projects" class="button is-large">
-								See Projects
-							</a>
-						</p>
-					</div>
-				</div>
+			</div>
+			<div class="column is-4 name">
+				<p>
+					<span class="title is-bold">Spencer Ying</span>
+				</p>
+				<p class="tagline">
+					
+					Frontend Developer
+				</p>
+			</div>
+			<div class="column is-2 followers has-text-centered">
+				<p class="stat-val">129k</p>
+				<p class="stat-key">followers</p>
+			</div>
+			<div class="column is-2 following has-text-centered">
+				<p class="stat-val">2k</p>
+				<p class="stat-key">following</p>
+			</div>
+			<div class="column is-2 likes has-text-centered">
+				<p class="stat-val">29</p>
+				<p class="stat-key">likes</p>
 			</div>
 		</div>
-	</div>
-	<br><br><br>
-	<h2 class="title is-3 has-text-centered">Get Started on a Project:</h2>
-	<div class="container">
-		<!-- Main container -->
-		<nav class="level">
-			<!-- Left side -->
-			<div class="level-left">
-				<p class="level-item"><strong>Writing</strong></p>
-				<p class="level-item"><a>Drawing</a></p>
-				<p class="level-item"><a>Creating</a></p>
-				<p class="level-item"><a>Coding</a></p>
-				<p class="level-item"><a class="button is-success">Create Your Own</a></p>
-			</div>
-			<div class="level-right">
-				<div class="level-item">
-					<p class="control has-addons">
-						<input class="input" type="text" placeholder="Find a project">
-						<button class="button">
-						Search for a Project
-						</button>
-					</p>
-				</div>
-			</div>
-			<!-- Right side -->
-		</nav>
-		<div class="columns is-multiline">
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Let's Write!</p>
-								<p class="subtitle is-6">Intro Project</p>
-							</div>
-						</div>
-						<div class="content">
-							Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Free Writing</p>
-								<p class="subtitle is-6">Intro Project</p>
-							</div>
-						</div>
-						<div class="content">
-							<b>Spend an hour a week for 6 weeks</b> free writing, which is writing continuously without regards to spelling, grammar, topic or plot. Don't get stuck and don't edit - just let it flow!
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">I'm a Blogger</p>
-								<p class="subtitle is-6">Intermediate Project</p>
-							</div>
-						</div>
-						<div class="content">
-							Write <b>2 blog posts</b> a week for <b>8 weeks</b>. The blog posts can be anything you'd like, and you can publish them immediately or save them for a rainy day.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Story Teller</p>
-								<p class="subtitle is-6">Intermediate Project</p>
-							</div>
-						</div>
-						<div class="content">
-							Write a <b>50,000 word story in 11 weeks</b>. The first week should be an outline of the story you are writing, followed by 5000 words a week. This is a major first step for many writers!
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Poet</p>
-								<p class="subtitle is-6">Intermediate Project</p>
-							</div>
-						</div>
-						<div class="content">
-							Write a poem every week for 6 weeks.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-4">
-				<div class="card">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image" style="height: 40px; width: 40px;">
-									<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">Novel Writer</p>
-								<p class="subtitle is-6">Advanced Project</p>
-							</div>
-						</div>
-						<div class="content">
-							Write a <b>100,000 word novel in 44 weeks</b>. Minimum 2500 words a week, but aim to write about 5000 words a week because rewriting and trimming will reduce the final word count.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	</section>
 {% endblock %}
-{% extends "../partials/basic-template.njk" %}
+{% extends "../partials/my-template.njk" %}

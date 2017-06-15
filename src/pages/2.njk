@@ -1,72 +1,59 @@
 {% set title = "Landing Page" %}
 {% block content %}
+	<br><br><br>
 	<div class="container">
-		<form class="pkls">
-			<label class="label">Name</label>
-			<p class="control">
-				<input class="input" type="text" placeholder="Text input" name="project.name">
-			</p>
-			<label class="label">Subject</label>
-			<p class="control">
-				<span class="select">
-					<select name='project.select'>
-						<option>Select dropdown</option>
-						<option>With options</option>
-					</select>
-				</span>
-			</p>
-			<label class="label">Message</label>
-			<p class="control">
-				<textarea class="textarea" placeholder="Textarea" name="project.text"></textarea>
-			</p>
-			<p class="control">
-				<label class="checkbox">
-					<input type="checkbox" name="project.check">
-					Remember me
-				</label>
-			</p>
-			<p class="control selectcollection" data-field="project.multi">
-				<label class="checkbox">
-					<input type="checkbox" name="multi" value="a">
-					value a					
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="multi" value="b">
-					value b				
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="multi" value="c">
-					value c					
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="multi" value="d">
-					value d					
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="multi" value="e">
-					value e				
-				</label>
-			</p>
-
-			<p class="control">
-				<label class="radio">
-					<input type="radio" name="project.question" value="yes">
-					Yes
-				</label>
-				<label class="radio">
-					<input type="radio" name="project.question" value="no">
-					No
-				</label>
-			</p>
-			<div class="control is-grouped">
-				<p class="control">
-					<button class="button is-primary pksave">Submit</button>
-				</p>
-				<p class="control">
-					<button class="button is-link">Cancel</button>
-				</p>
+		<div class="columns">
+			<div class="column is-3">
+				<nav class="panel">
+					<p class="panel-heading">
+						Step 2 of 4
+					</p>
+					<a class="panel-block is-completed pknav prev">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-check"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Basic Profile</h2>
+							<p>Thanks for filling it out!</p>
+						</div>
+					</a>
+					<a class="panel-block is-active">
+						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
+							<i class="fa fa-file-text-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">Assessment</h2>
+							<p>Select your tech assessment:</p>
+						</div>
+					</a>
+					<a class="panel-block is-disabled">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-star"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless">View Companies</h2>
+							<p></p>
+						</div>
+					</a>
+					<a class="panel-block is-disabled">
+						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
+							<i class="fa fa-send-o"></i>
+						</span>
+						<div>
+							<h2 class="title is-5 is-marginless"></h2>
+							<p></p>
+						</div>
+					</a>
+				</nav>
 			</div>
-		</form>
+			<div class="column is-8">
+				<div class="has-text-centered">
+					<h1 class="title is-4">Assessments help us to showcase you to companies.</h1>
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
+</div>
 {% endblock %}
 {% extends "../partials/basic-template.njk" %}

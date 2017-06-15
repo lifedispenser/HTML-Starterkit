@@ -1,0 +1,79 @@
+{% set title = "Peer Pact Home" %}
+{% block content %}
+	<nav class="nav has-shadow" id="top">
+		<div class="container">
+			<div class="nav-left">
+				<a class="nav-item">
+					EMAIL CLIENT
+				</a>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-2">
+				<div class="box trending">
+					<p class="trend-title"><span class="title is-5">Inbox</span></p>
+					<p class="trend-hashtag"><a href="#">Starred</a></p>
+					<p class="trend-hashtag"><a href="#">Sent Mail</a></p>
+					<p class="trend-hashtag"><a href="#">Drafts</a></p>
+					<p class="trend-hashtag"><a href="#">All Mail</a></p>
+					<hr>
+					<p class="trend-hashtag"><a href="#">Categories</a></p>
+					<p class="trend-hashtag"><a href="#"></a></p>
+				</div>
+			</div>
+			<div class="column is-7">
+				<div class="box">
+					<h2 class="title is-4">You've been peer'd up!</h2>
+					<hr>
+					<article class="media">
+						<div class="media-left">
+							<figure class="image is-32x32">
+								<img src="http://placehold.it/128x128" alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<div class="content">
+								<p>
+									From <strong>John Smith</strong> <small>J@johnsmith.org</small> <small style="float:right;">3:31pm (2 hours ago)</small>
+									<br> to <strong>you</strong>
+								</p>
+								<p>You've been peer'd up
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+			<div class="column is-3">
+				<div class="box">
+					<p><span class="title is-5">People</span></p>
+					<hr>
+					<div class="columns">
+						<div class="column is-3 is-marginless">
+							<div class="image">
+								<img src="https://placehold.it/200x200">
+							</div>
+						</div>
+						<div class="column is-9">
+							<p>
+								<a href="#">
+									<strong>John Smith</strong>
+									J@jsmith.org
+								</a>
+							</p>
+							<a class="button is-primary is-small">
+								<span>
+									+ Add to Circles
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

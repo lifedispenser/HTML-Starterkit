@@ -159,6 +159,10 @@
       // console.log("should be false", goParent('9'));
 
       function goChild(loc, child) {
+        console.log(loc, child);
+        if(child === undefined) {
+          child = "a";
+        }
         // var loc = lookup();
         var loc = loc.split("__").join("-"); // replace '__' with '-'
         var arr = loc.split("_");
@@ -204,7 +208,8 @@
           for (var i=0; i< classes.length;i++) {
             var c = classes[i];
             if(c.includes("child")) {
-              var d = c.split("-")
+              var d = c.split("-");
+              console.log(d);
               var link = chooser[d[0]](d[1]);
             } else if (c !== '' && c !== 'pknav') {
               if(chooser[c] !== undefined) {
