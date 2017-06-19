@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Pick Role</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/jsform.min.js"></script>
     <script type="text/javascript" src="/js/store.min.js"></script>
@@ -360,6 +360,7 @@
       <a class="pknav next">Next</a>
       <a class="open"><span class="icon"><i class="fa fa-commenting"></i></span></a>
     </div>
+    
     <div class="narrator message is-info">
       <div class="message-header">
         <p>Narrator</p>
@@ -371,63 +372,161 @@
       </div>
     </div>
     
+	<nav class="nav has-shadow" id="top">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item" href="../index.html">
+          <img src="/images/logo-undefined.jpg" alt="Description">
+        </a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab">
+          Help
+        </a>
+        <span class="nav-item">
+          <a class="button is-outline">
+            Log out
+          </a>
+        </span>
+      </div>
+    </div>
+  </nav>
+
     
-    
-	<br><br><br>
-	<div class="container">
-		<div class="columns">
-			<div class="column is-3">
-				<nav class="panel">
-					<p class="panel-heading">
-						Step 2 of 4
-					</p>
-					<a class="panel-block is-completed pknav prev">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Basic Profile</h2>
-							<p>Thanks for filling it out!</p>
-						</div>
-					</a>
-					<a class="panel-block is-active">
-						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
-							<i class="fa fa-file-text-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Assessment</h2>
-							<p>Select your tech assessment:</p>
-						</div>
-					</a>
-					<a class="panel-block is-disabled">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-star"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">View Companies</h2>
-							<p></p>
-						</div>
-					</a>
-					<a class="panel-block is-disabled">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-send-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless"></h2>
-							<p></p>
-						</div>
-					</a>
-				</nav>
+	<div class="columns">
+		<aside class="column is-2 menu left-nav is-hidden-mobile">
+			<div class="has-text-centered">
+				<a href="/9.html" class="button">View Your Profile</a>
+				<br><br>
+				<a href="/8.html">View your qualifications</a>
 			</div>
-			<div class="column is-8">
-				<div class="has-text-centered">
-					<h1 class="title is-4">Assessments help us to showcase you to companies.</h1>
-				</div>
+			<br>
+			<div class="menu-label">Edit Profile</div>
+			<ul class="menu-list">
+				<li><a href="/1__1.html">Basic Information</a></li>
+				<li>
+					<a href="/2.html">Roles</a>
+				</li>
+				<li>
+					<a href="/3.html">Qualifications</a>
+					<ul>
+						<li><a href="">Your Qualifications</a></li>
+						<li><a href="">All Qualifications</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/4.html">Accolades</a>
+				</li>
+				<li>
+					<a href="/5.html">References</a>
+				</li>
+				<li>
+					<a>Companies</a>
+					<ul>
+						<li><a href="">Your Companies</a></li>
+						<li><a href="">All Companies</a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+		
+		<div class="column is-7">
+			<div class="section">
+				<h2 class="title is-3">Your Role</h2>
+				<h2 class="subtitle is-5">Pick a role. You can apply to many jobs at once when you qualify for that role.</h2>
+				<br>
+				<nav class="level">
+					<!-- Left side -->
+					<div class="level-left">
+						<div class="level-item">
+							<p class="subtitle is-5">
+								<strong>12</strong> roles
+							</p>
+						</div>
+						<div class="level-item">
+							<p class="control has-addons">
+								<input class="input" type="text" placeholder="Search for role">
+								<button class="button">
+								Search
+								</button>
+							</p>
+						</div>
+					</div>
+					<!-- Right side -->
+					<div class="level-right">
+						<p class="level-item"><strong>All</strong></p>
+						<p class="level-item"><a href="">Modern Web</a></p>
+						<p class="level-item"><a>Java</a></p>
+						<p class="level-item"><a>Microsoft</a></p>
+						<p class="level-item"><a>Mobile</a></p>
+						<p class="level-item"><a href="" class="button is-outline">?</a></p>
+					</div>
+				</nav>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Role</th>
+							<th>Badges Needed</th>
+							<th># Jobs Available</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Front End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>14 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (Java)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>7 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (C++)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>3 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Back End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>23 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says:</h2>
+				<h2 class="subtitle">What's a role?</h2>
+				<div class="content">
+					<p>OPTIONAL: Don't show badges in this table.</p>
+					<p>You can qualify for a role by adding badges.</p>
+					<p></p>
+				</div>
+			</div>
+			
+			
+		</div>
 	</div>
-</div>
-</div>
 
   </body>
   

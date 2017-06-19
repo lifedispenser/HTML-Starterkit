@@ -116,10 +116,125 @@ footer {
 }
 
 .main-heading {
+	.mh-title {
+		line-height: 46px;
+	} 
+
 	img {
 		border-radius:200px;
 	}
 	.name {
 		font-size:16px;
 	}
+	.recruiter .content {
+		font-size: 18px;
+	}
+	.pagination-link {
+		font-size: 16px;
+	}
+}
+.main-process {
+	background-color: $white-bis;
+	.title {
+		font-size:32px;
+		line-height: 48px;
+	}
+	.content {
+		font-size: 16px;
+	}
+	.3col {
+		img {
+			border-radius: 300px;
+		}
+		font-size:18px;
+	}
+}
+
+.main-why {
+	.content {
+		font-size: 17px;
+		line-height: 28px;
+	}
+}
+.profile-heading {
+	.title {
+		margin-bottom:5px;
+	}
+	.avatar img {
+		border-radius:400px;
+	}
+	.contact {
+		font-size:12px;
+		span.email {
+			padding-right: 10px;
+		}
+	}
+	.role {
+		margin-bottom: 5px;
+		i {
+			padding-top:2px; /* make vcentered later */
+			padding-right: 5px;
+			color: $blue;
+		}
+		font-size: 16px;
+	}
+	.stat {
+		&-val {
+			font-size: 18px;
+		}
+		&-key i {
+			font-size:42px;
+			padding-top: 16px;
+			color: $blue;
+		}
+	}
+}
+.highlights {
+	.badge {
+		padding: 10px;
+		i {
+			padding-right: 5px;
+			color: $grey-light;
+		}
+		&-title {
+			font-size: 16px;
+		}
+		p {
+			padding-top: 5px;
+		}
+	}
+}
+.references {
+	.referrer {
+		.name	{
+			font-size:20px;	
+		}
+		.role {
+			font-size: 16px;
+			padding-right: 12px;
+		}
+	}
+	.media-content {
+		font-size: 16px;
+		i {
+			color: $grey-lighter;
+			padding: 0 20px;
+		}
+	}
+}
+
+.page {
+	margin-top: 10px;
+	padding: 50px 40px;
+	background-color: white;
+	box-shadow: 0px 0px 5px #ccc;
+	margin-bottom: 50px;
+}
+
+.left-nav {
+	background-color: $white-bis;
+	padding: 30px;
+}
+.helpertxt {
+	background-color: $grey-lighter;
 }

@@ -1,99 +1,176 @@
-{% set title = "Landing Page" %}
+{% set title = "Earn Badges" %}
+{% block nav %}
+	{% include "nav-user.njk" %}
+{% endblock %}
 {% block content %}
-	<br><br><br>
-	<div class="container">
-		<div class="columns">
-			<div class="column is-3">
-				<nav class="panel">
-					<p class="panel-heading">
-						Step 3 of 4
-					</p>
-					<a class="panel-block is-completed">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<p class="title is-5 is-marginless">Choose Project</p>
-							<p>Select a project to start</p>
-						</div>
-					</a>
-					<div class="panel-block">
-						<div class="card" choice="user_project">
-							<div class="card-content">
-								<div class="media">
-									<div class="media-left">
-										<figure class="image" style="height: 40px; width: 40px;">
-											<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-										</figure>
-									</div>
-									<div class="media-content">
-										<p class="title is-4" pkv="title">Let's Write!</p>
-										<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
-									</div>
-								</div>
-								<div class="content">
-									Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
-								</div>
-							</div>
-						</div>
-					</div>
-					<a class="panel-block is-completed">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Sign up</h2>
-							<p>Login with email or Google+</p>
-						</div>
-					</a>
-					<div class="panel-block">	
-						<p class="has-text-centered">
-							<i>Signed in. Welcome Spencer!</i>
+	<div class="columns">
+		{% include 'left-nav.njk' %}
+		<div class="column is-7">
+			<div class="section">
+				<h3 class="title is-3">Get qualified for your role</h3>
+				<h4 class="subtitle is-5">Passing our assessments qualifies you to apply for jobs associated with the role</h4>
+				<br>
+				<p style="font-size:12px; text-transform: uppercase">Featured Assessments</p>
+				<br>
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">
+							<i class="fa fa-star" aria-hidden="true"></i> &nbsp;
+							Fast Programming Quiz
 						</p>
+						<p class="card-header-icon">
+							for All Roles
+						</p>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+							<a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
+							<br>
+							<small>Badges earned: UI Design, Algorithms, etc.</small>
+						</div>
 					</div>
-					<a class="panel-block is-active">
-						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
-							<i class="fa fa-handshake-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Peer Up</h2>
-							<p>So you don't go alone</p>
+					<footer class="card-footer">
+						<p class="card-footer-item">Time Allowed: <br>
+							45 min
+						</p>
+						<p class="card-footer-item">Est. Time Required: <br>
+							45 minutes
+						</p>
+						<a class="card-footer-item">Start Assessment</a>
+					</footer>
+				</div>
+				<br>
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">
+							<i class="fa fa-star" aria-hidden="true"></i> &nbsp;
+							Conway's Game of Life (Coding Challenge)
+						</p>
+						<p class="card-header-icon">
+							for Front End Developer (Modern Web)
+						</p>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+							<a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
+							<br>
+							<small>Badges earned: UI Design, Algorithms, etc.</small>
 						</div>
-					</a>
-					<a class="panel-block is-disabled">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-file-text-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Sign Pact</h2>
-							<p>Commit to your project</p>
+					</div>
+					<footer class="card-footer">
+						<p class="card-footer-item">Time Allowed: <br>
+							7 days
+						</p>
+						<p class="card-footer-item">Est. Time Required: <br>
+							8 hours
+						</p>
+						<a class="card-footer-item">Start Assessment</a>
+					</footer>
+				</div>
+				<br><br>
+				<p style="font-size:12px; text-transform: uppercase">All Assessments</p>
+				<br>
+				<nav class="level">
+					<!-- Left side -->
+					<div class="level-left">
+						<div class="level-item">
+							<p class="subtitle is-5">
+								<strong>12</strong> Assessments
+							</p>
 						</div>
-					</a>
-					<a class="panel-block is-disabled">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-send-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Let's Go</h2>
-							<p>Get started on your first week!</p>
+						<div class="level-item">
+							<p class="control has-addons">
+								<input class="input" type="text" placeholder="Search by badge">
+								<button class="button">
+								Search
+								</button>
+							</p>
 						</div>
-					</a>
+					</div>
+					<!-- Right side -->
+					<div class="level-right">
+						<p class="level-item"><strong>All</strong></p>
+						<p class="level-item"><a href="">Modern Web</a></p>
+						<p class="level-item"><a>Java</a></p>
+						<p class="level-item"><a>Microsoft</a></p>
+						<p class="level-item"><a>Mobile</a></p>
+						<p class="level-item"><a href="" class="button is-outline">?</a></p>
+					</div>
+				</nav>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Assessment</th>
+							<th>Badges Earned</th>
+							<th>Est. Time</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Front End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>14 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (Java)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>7 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (C++)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>3 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Back End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>23 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav class="pagination is-centered">
+					<a class="pagination-previous">Previous</a>
+					<a class="pagination-next">Next</a>
+					<ul class="pagination-list">
+						<li><a class="pagination-link">1</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">3</a></li>
+						<li><a class="pagination-link is-current">4</a></li>
+						<li><a class="pagination-link">5</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">7</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="column is-9">
-				<h1 class="title is-4">Step 3: Grab a Peer</h1>
-				<p class="subtitle is-5">A peer helps you to stay motivated and validates your motivation with their own.</p>
-				<br><br><br>
-				<button class="button is-primary is-medium pknav next">Peer me up</button> 
-				<br><br>
-				<button class="button is-medium pknav next">I want to invite someone...</button>
-				<br><br><br><br><br>
+		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says</h2>
+				<h2 class="subtitle">Your Role</h2>
 				<div class="content">
-					<i>
-					It's always better to start a long, hard journey with a trustworthy peer. When the going gets tough, you can take comfort in the fact that they are working just as hard as you are to reach their goal too. And if they aren't, enjoy the sweet savor of victory as you send them off into the cold, dark void of wasted sweat and tears.
-					</i>
+					<p>Front End Engineer (Modern Web) </p>
+					<p>Badges Needed: UI Design, Single Page Apps, Algorithms, Testing</p>
+					<h2>How do I earn Badges?</h2>
+					<p>Earn badges by passing assessments.</p>
 				</div>
 			</div>
+			
+			
 		</div>
 	</div>
 {% endblock %}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Earn Badges</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/jsform.min.js"></script>
     <script type="text/javascript" src="/js/store.min.js"></script>
@@ -360,6 +360,7 @@
       <a class="pknav next">Next</a>
       <a class="open"><span class="icon"><i class="fa fa-commenting"></i></span></a>
     </div>
+    
     <div class="narrator message is-info">
       <div class="message-header">
         <p>Narrator</p>
@@ -371,129 +372,174 @@
       </div>
     </div>
     
+	<nav class="nav has-shadow" id="top">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item" href="../index.html">
+          <img src="/images/logo-undefined.jpg" alt="Description">
+        </a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab">
+          Help
+        </a>
+        <span class="nav-item">
+          <a class="button is-outline">
+            Log out
+          </a>
+        </span>
+      </div>
+    </div>
+  </nav>
+
     
-    
-	<script>
-			Date.prototype.getWeekDay = function() {
-		    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-		    return weekday[this.getDay()];
-		}
-		store.set("today", new Date().getWeekDay());
-		function saveDate() {
-			store.set("project.newday", store.get("today"));
-		}
-	</script>
-	<br><br><br>
-	<div class="container">
-		<div class="columns">
-			<div class="column is-3">
-				<nav class="panel">
-					<p class="panel-heading">
-						Step 4 of 4
-					</p>
-					<a class="panel-block is-completed">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<p class="title is-5 is-marginless">Choose Project</p>
-							<p>Select a project to start</p>
+	<div class="columns">
+		<aside class="column is-2 menu left-nav is-hidden-mobile">
+			<div class="has-text-centered">
+				<a href="/9.html" class="button">View Your Profile</a>
+				<br><br>
+				<a href="/8.html">View your qualifications</a>
+			</div>
+			<br>
+			<div class="menu-label">Edit Profile</div>
+			<ul class="menu-list">
+				<li><a href="/1__1.html">Basic Information</a></li>
+				<li>
+					<a href="/2.html">Roles</a>
+				</li>
+				<li>
+					<a href="/3.html">Qualifications</a>
+					<ul>
+						<li><a href="">Your Qualifications</a></li>
+						<li><a href="">All Qualifications</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/4.html">Accolades</a>
+				</li>
+				<li>
+					<a href="/5.html">References</a>
+				</li>
+				<li>
+					<a>Companies</a>
+					<ul>
+						<li><a href="">Your Companies</a></li>
+						<li><a href="">All Companies</a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+		<div class="column is-7">
+			<div class="section">
+				<h3 class="title is-3">Accolades</h3>
+				<h4 class="subtitle is-5">Adding accolades help you <b>stand out</b> from your peers</h4>
+				<br>
+				<p style="font-size:12px; text-transform: uppercase">All Accolades</p>
+				<br>
+				<nav class="level">
+					<!-- Left side -->
+					<div class="level-left">
+						<div class="level-item">
+							<p>
+								<strong>12</strong> Accolades to Earn
+							</p>
 						</div>
-					</a>
-					<div class="panel-block">
-						<div class="card" choice="user_project">
-							<div class="card-content">
-								<div class="media">
-									<div class="media-left">
-										<figure class="image" style="height: 40px; width: 40px;">
-											<img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-										</figure>
-									</div>
-									<div class="media-content">
-										<p class="title is-4" pkv="title">Let's Write!</p>
-										<p class="subtitle is-6" pkv="subtitle">Intro Project</p>
-									</div>
-								</div>
-								<div class="content">
-									Write <b>5000 words</b> a week for <b>6 weeks</b>. It can be for anything you'd like. This is an intro project to get you started on peer pact.
-								</div>
-							</div>
+						<div class="level-item">
+							<p class="control has-addons">
+								<input class="input" type="text" placeholder="Search">
+								<button class="button">
+								Search
+								</button>
+							</p>
 						</div>
 					</div>
-					<a class="panel-block is-completed">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Sign up</h2>
-							<p>Login with email or Google+</p>
-						</div>
-					</a>
-					<div class="panel-block">
-						<p class="has-text-centered">
-							<i>Signed in. Welcome Spencer!</i>
-						</p>
+					<!-- Right side -->
+					<div class="level-right">
+						<p class="level-item"><strong>All</strong></p>
+						<p class="level-item"><a href="">Modern Web</a></p>
+						<p class="level-item"><a>Java</a></p>
+						<p class="level-item"><a>Microsoft</a></p>
+						<p class="level-item"><a>Mobile</a></p>
+						<p class="level-item"><a href="" class="button is-outline">?</a></p>
 					</div>
-					<a class="panel-block is-completed">
-						<span class="panel-icon" style="font-size:28px;margin-right:.7em;margin-left:0em;">
-							<i class="fa fa-check"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Peer Up</h2>
-							<p>So you don't go alone</p>
-						</div>
-					</a>
-					<div class="panel-block">
-						<p class="has-text-centered">
-							<i>Peer coming your way!</i>
-						</p>
-					</div>
-					<a class="panel-block is-active">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-file-text-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Sign Pact</h2>
-							<p>Commit to your project</p>
-						</div>
-					</a>
-					<a class="panel-block is-disabled">
-						<span class="panel-icon" style="font-size:28px;margin-right:.5em;margin-left:.2em;">
-							<i class="fa fa-send-o"></i>
-						</span>
-						<div>
-							<h2 class="title is-5 is-marginless">Let's Go</h2>
-							<p>Get started on your first week!</p>
-						</div>
-					</a>
+				</nav>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Assessment</th>
+							<th>Badges Earned</th>
+							<th>Est. Time</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Front End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>14 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (Java)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>7 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (C++)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>3 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Back End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>23 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav class="pagination is-centered">
+					<a class="pagination-previous">Previous</a>
+					<a class="pagination-next">Next</a>
+					<ul class="pagination-list">
+						<li><a class="pagination-link">1</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">3</a></li>
+						<li><a class="pagination-link is-current">4</a></li>
+						<li><a class="pagination-link">5</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">7</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="column is-9">
-				<h1 class="title is-4">Step 4: Commit to your pact</h1>
-				<p class="subtitle is-5">Committing helps you build resolution. At the end of the day, only you can keep your pact.</p>
-				<br><br><br>
-				<div class="card">
-					<div class="card-content">
-						<h2 class="title is-4 has-text-centered">The Pact</h2>
-						I want to work on this project and will check in work consistently.
-						<br><br>
-						I will check in every week starting from today (<span pkload="today">Monday</span>). So <b>every <span pkload="today">Monday</span></b>, I will show a sample of work to my peer that indicates I'm working towards my goal.
-						<br><br>
-						<label class="checkbox">
-							<input type="checkbox">
-							I agree with this pact.
-						</label>
-						<br><br>
-						<a class="button is-primary pknav next" onclick="saveDate()"> Sign Peer Pact </a>
-					</div>
-				</div>
-				<br><br><br><br>
+		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says</h2>
+				<h2 class="subtitle">Your Role</h2>
 				<div class="content">
-					<i>
-					Wow, did that person just... commit to something? Like, actually commit? That's unbelievable man... Like totally.
-					</i>
+					<p>Front End Engineer (Modern Web) </p>
+					<p>Badges Needed: UI Design, Single Page Apps, Algorithms, Testing</p>
+					<h2>How do I earn Badges?</h2>
+					<p>Earn badges by passing assessments.</p>
 				</div>
 			</div>
+			
+			
 		</div>
 	</div>
 

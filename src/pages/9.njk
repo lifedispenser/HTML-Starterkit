@@ -1,72 +1,127 @@
-{% set title = "Landing Page" %}
+{% set title = "Profile" %}
+{% block nav %}
+  {% include "nav-user.njk" %}
+{% endblock %}
 {% block content %}
-  <div class="container">
-    <form class="pkls">
-      <label class="label">Name</label>
-      <p class="control">
-        <input class="input" type="text" placeholder="Text input" name="project.name">
-      </p>
-      <label class="label">Subject</label>
-      <p class="control">
-        <span class="select">
-          <select name='project.select'>
-            <option>Select dropdown</option>
-            <option>With options</option>
-          </select>
-        </span>
-      </p>
-      <label class="label">Message</label>
-      <p class="control">
-        <textarea class="textarea" placeholder="Textarea" name="project.text"></textarea>
-      </p>
-      <p class="control">
-        <label class="checkbox">
-          <input type="checkbox" name="project.check">
-          Remember me
-        </label>
-      </p>
-      <p class="control selectcollection" data-field="project.multi">
-        <label class="checkbox">
-          <input type="checkbox" name="multi" value="a">
-          value a         
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="multi" value="b">
-          value b       
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="multi" value="c">
-          value c         
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="multi" value="d">
-          value d         
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="multi" value="e">
-          value e       
-        </label>
-      </p>
-
-      <p class="control">
-        <label class="radio">
-          <input type="radio" name="project.question" value="yes">
-          Yes
-        </label>
-        <label class="radio">
-          <input type="radio" name="project.question" value="no">
-          No
-        </label>
-      </p>
-      <div class="control is-grouped">
-        <p class="control">
-          <button class="button is-primary pksave">Submit</button>
-        </p>
-        <p class="control">
-          <button class="button is-link">Cancel</button>
-        </p>
+  <style>
+  html {
+  background-color: #f3f3f3;
+  }
+  </style>
+  <div class="columns">
+    {% include "left-nav.njk" %}
+    <div class="column is-10">
+      <br>
+      <h2 class="title">Your profile:</h2>
+      
+      <div class="max-width960 page">
+        <section class="profile-heading">
+          <div class="columns">
+            <div class="column is-2">
+              <div class="image is-128x128 avatar">
+                <img src="https://placehold.it/256x256">
+              </div>
+            </div>
+            <div class="column is-4 name">
+              <h2 class="title is-bold">Spencer Ying
+              </h2>
+              <p class="role">
+                <i class="fa fa-file-code-o" aria-hidden="true"></i> Frontend Developer <a href="" style="font-size: 12px;">see details</a>
+              </p>
+              <p class="contact">
+                <span class="email">
+                lifedispenser@gmail.com</span>
+                <span class="phone"> +(852) 5199 8042</span>
+              </p>
+            </div>
+            <div class="column is-2 stat has-text-centered">
+              <p class="stat-val">CV</p>
+              <p class="stat-key"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+            </div>
+            <div class="column is-2 stat has-text-centered">
+              <p class="stat-val">LinkedIn</p>
+              <p class="stat-key"><i class="fa fa-linkedin-square" aria-hidden="true"></i></p>
+            </div>
+            <div class="column is-2 stat has-text-centered">
+              <p class="stat-val">Qualifications</p>
+              <p class="stat-key"><i class="fa fa-bar-chart" aria-hidden="true"></i></i></p>
+            </div>
+          </div>
+        </section>
+        <br><br>
+        <section class="highlights">
+          <h2 class="title">Accolades</h2>
+          <div class="columns is-multiline">
+            <div class="column is-4 badge">
+              <div class="badge">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+                <span class="badge-title">Kaggle Competition Participant</span>
+                <p>Rank #1231212 in 2017 doing data science as a hobbyist.</p>
+                <a href="">view details</a>
+              </div>
+            </div>
+            <div class="column is-4 badge">
+              <div class="badge">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+                <span class="badge-title">Github Open Source Contributor</span>
+                <p>Worked on project with 1100 stars, did 67 commits to resolve 23 issues over 10 months.</p>
+                <a href="">view details</a>
+              </div>
+            </div>
+            <div class="column is-4 badge">
+              <div class="badge">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+                <span class="badge-title">Hackerrank Participant</span>
+                <p>Rank #1231212 in 2017. Algorithms is not my hobby.</p>
+                <a href="">view details</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+        <section class="references">
+          <h2 class="title">References</h2>
+          <article class="media">
+            <figure class="media-left referrer">
+              <p class="name">John Doe</p>
+              <p class="role"><span class="job-title">CEO</span> of <span class="company">Terminal 1</span></p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                I would highly recommend John Smith to any role that you have in any organization. He made significant contributions in every position held and built the team from the ground up...
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="" class="button is-outline">Read Full Referral</a>
+            </div>
+          </article>
+        </section>
+        <br><br><br>
+        <section class="info">
+          <h2 class="title">Other Information</h2>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <div class="subtitle">Eligible Working Locations</div>
+              <div class="info">US</div>
+            </div>
+            <div class="column is-4">
+              <div class="subtitle">Desired Working Locations</div>
+              <div class="info">HK</div>
+            </div>
+            <div class="column is-4">
+              <div class="subtitle">Languages</div>
+              <div class="info">English</div>
+            </div>
+            <div class="column is-12">
+              <div class="subtitle">Notes</div>
+              <p>Am looking to do this immediately.</p>
+            </div>
+          </div>
+        </section>
       </div>
-    </form>
+    </div>
   </div>
 {% endblock %}
-{% extends "../partials/basic-template.njk" %}
+{% extends "../partials/my-template.njk" %}
