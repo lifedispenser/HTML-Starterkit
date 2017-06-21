@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Role</title>
+    <title>All Roles</title>
     <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="/js/jsform.min.js"></script>
     <script type="text/javascript" src="/js/store.min.js"></script>
@@ -402,52 +402,42 @@
 		<aside class="column is-2 menu left-nav is-hidden-mobile">
 			<div class="has-text-centered">
 				<a href="/9.html" class="button">View Your Profile</a>
-				<br><br>
-				<a href="/8.html">View your qualifications</a>
 			</div>
 			<br>
 			<div class="menu-label">Edit Profile</div>
 			<ul class="menu-list">
 				<li><a href="/1__1.html">Basic Information</a></li>
 				<li>
-					<a href="/2.html">Roles</a>
-				</li>
-				<li>
-					<a href="/3.html">Qualifications</a>
+					<a href="/2.html">Role: DevOps Engineer</a>
 					<ul>
-						<li><a href="">Your Qualifications</a></li>
-						<li><a href="">All Qualifications</a></li>
+						<li><a href="3.html">Level: Senior</a></li>
+						<li><a href="2.html">Assessments</a></li>
+						<li><a href="4.html">Status: Pending</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="/4.html">Accolades</a>
-				</li>
-				<li>
-					<a href="/5.html">References</a>
-				</li>
-				<li>
-					<a>Companies</a>
-					<ul>
-						<li><a href="">Your Companies</a></li>
-						<li><a href="">All Companies</a></li>
-					</ul>
+					<a href="/5.html">Change Role</a>
 				</li>
 			</ul>
 		</aside>
-		
-		<div class="column is-7">
+		<div class="column is-7 section-role">
 			<div class="section">
-				<h2 class="title is-3">Your Role</h2>
-				<h2 class="subtitle is-5">Pick a role. You can apply to many jobs at once when you qualify for that role.</h2>
-				<br>
+				<div class="message is-info">
+					<div class="message-body">
+						Choose a role to begin.
+					</div>
+				</div>
 				<nav class="level">
 					<!-- Left side -->
 					<div class="level-left">
 						<div class="level-item">
 							<p class="subtitle is-5">
-								<strong>12</strong> roles
+								<strong>21</strong> roles
 							</p>
 						</div>
+					</div>
+					<!-- Right side -->
+					<div class="level-right">
 						<div class="level-item">
 							<p class="control has-addons">
 								<input class="input" type="text" placeholder="Search for role">
@@ -456,78 +446,539 @@
 								</button>
 							</p>
 						</div>
-					</div>
-					<!-- Right side -->
-					<div class="level-right">
-						<p class="level-item"><strong>All</strong></p>
-						<p class="level-item"><a href="">Modern Web</a></p>
-						<p class="level-item"><a>Java</a></p>
-						<p class="level-item"><a>Microsoft</a></p>
-						<p class="level-item"><a>Mobile</a></p>
 						<p class="level-item"><a href="" class="button is-outline">?</a></p>
 					</div>
 				</nav>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Role</th>
-							<th>Badges Needed</th>
-							<th># Jobs Available</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Front End Engineer (Modern Web)</td>
-							<td>
-								UI Design, Single Page Apps, Algorithms, Testing
-							</td>
-							<td>14 Jobs with this Role</td>
-							<td><a href="" class="button is-outline">Select Role</a></td>
-						</tr>
-						<tr>
-							<td>Front End Engineer (Java)</td>
-							<td>
-								UI Design, Single Page Apps, Algorithms, Testing
-							</td>
-							<td>7 Jobs with this Role</td>
-							<td><a href="" class="button is-outline">Select Role</a></td>
-						</tr>
-						<tr>
-							<td>Front End Engineer (C++)</td>
-							<td>
-								UI Design, Single Page Apps, Algorithms, Testing
-							</td>
-							<td>3 Jobs with this Role</td>
-							<td><a href="" class="button is-outline">Select Role</a></td>
-						</tr>
-						<tr>
-							<td>Back End Engineer (Modern Web)</td>
-							<td>
-								UI Design, Single Page Apps, Algorithms, Testing
-							</td>
-							<td>23 Jobs with this Role</td>
-							<td><a href="" class="button is-outline">Select Role</a></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="columns is-multiline roles">
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							<a href="3.html">Polygot Developer</a>
+							<br><small>6 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							<a href="3.html">Web Backend Developer</a>
+							<br><small>13 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							<a href="3.html">Web Frontend Developer</a>
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							<a href="3__1a.html">Web Fullstack Developer</a>
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Windows Software Developer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							WinOps Developer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							iOS Developer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Java Developer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Magento Developer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							QA Engineer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Security Engineer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							UI/UX Designer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							DevOps Engineer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Digital Marketer
+							<br><small>10 jobs available</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr><hr><hr> OR
+			<div class="section">
+				<h2 class="title is-4">Choose a Role:</h2>
+				<hr>
+				<div class="columns is-multiline roles">
+					<div class="column is-12">
+						<h2 class="title is-4">Web</h2>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Polygot Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Web Backend Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Web Frontend Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Web Fullstack Developer
+						</div>
+					</div>
+					<div class="column is-12">
+						<h2 class="title is-4">Windows Stack</h2>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Windows Software Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							WinOps Developer
+						</div>
+					</div>
+					<div class="column is-12">
+						<h2 class="title is-4">Mobile</h2>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							iOS Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Android Developer
+						</div>
+					</div>
+					<div class="column is-12">
+						<h2 class="title is-4">Specialized</h2>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Magento Developer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							QA Engineer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Security Engineer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							UI/UX Designer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							DevOps Engineer
+						</div>
+					</div>
+					<div class="column is-4 has-text-centered">
+						<img src="http://bulma.io/images/placeholders/64x64.png">
+						<br>
+						<div class="role-title">
+							Digital Marketer
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr><hr><hr>
+			or
+			<div class="section">
+				<h2 class="title is-4">Choose a Role:</h2>
+				<hr>
+				<nav class="level">
+					<!-- Left side -->
+					<div class="level-left">
+						<div class="level-item">
+							<p class="subtitle is-5">
+								<strong>21</strong> roles
+							</p>
+						</div>
+					</div>
+					<!-- Right side -->
+					<div class="level-right">
+						<p class="level-item"><a href="">Web</a></p>
+						<p class="level-item"><a href="">Mobile</a></p>
+						<p class="level-item"><a href="">Enterprise</a></p>
+						<div class="level-item">
+							<p class="control has-addons">
+								<input class="input" type="text" placeholder="Search for role">
+								<button class="button">
+								Search
+								</button>
+							</p>
+						</div>
+						<p class="level-item"><a href="" class="button is-outline">?</a></p>
+					</div>
+				</nav>
+				<div class="columns roles">
+	<div class="column is-3">
+		<div class="role-title has-text-centered">
+			Junior DevOps Engineer
+		</div>
+		<div class="badgetitle has-text-centered">
+			<div class="badge-image">
+				<img src="http://bulma.io/images/placeholders/128x128.png"><br>
+			</div>
+		</div>
+	</div>
+	<div class="column is-9">
+		<p>Handles continuous integration, delivery, deployment, uptime, and code quality/maintenance for the team.</p>
+		
+		<table class="table">
+			<tr>
+				<th>Level</th>
+				<th>Skill</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Java Platform</a></td>
+				<td>Low level programming, taught as POSIX in universities, including C, memory allocation</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Object Oriented Programming</a></td>
+				<td>SQL + NoSQL + Queues (Web Architecture) + Scaling</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Algorithmic Programming</a></td>
+				<td>Complexity + Recursion + Induction</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o gold" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Test, CI/CD, and Site Reliability</a></td>
+				<td>1 Sentence Description of Skill</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">API Design</a></td>
+				<td>Web Architecture. API design, documentation, REST, JSON, Networks, Latency. Microservice architecture.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+				<div class="columns roles is-multiline">
+	<div class="column is-1 badgetitle">
+		<div class="has-text-centered badge-image">
+			<img src="http://bulma.io/images/placeholders/128x128.png"><br>
+			<div class="level">
+				<i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+	<div class="column is-11 badgesummary">
+		<p class="title is-4">
+			DevOps Engineer
+		</p>
+		<p class="subtitle is-5">Handles continuous integration, delivery, deployment, uptime, and code quality/maintenance for the team. <a class="seeskills" href="">show skills</a></p>
+		<div class="float-seemore"></div>
+	</div>
+	<div class="column is-12 badgeskills">
+		<table class="table">
+			<tr>
+				<th>Level</th>
+				<th>Skill</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Java Platform</a></td>
+				<td>Low level programming, taught as POSIX in universities: OS/Nix/Shell + Signals/Interrupts + C/Pointers/Memory + Bits/Bytes</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Object Oriented Programming</a></td>
+				<td>SQL + NoSQL + Queues (Web Architecture) + Scaling</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Algorithmic Programming</a></td>
+				<td>Complexity + Recursion + Induction</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o gold" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Test, CI/CD, and Site Reliability</a></td>
+				<td>1 Sentence Description of Skill</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">API Design</a></td>
+				<td>Web Architecture. API design, documentation, REST, JSON, Networks, Latency. Microservice architecture.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+				<div class="columns roles">
+	<div class="column is-3">
+		<div class="role-title has-text-centered">
+			Junior DevOps Engineer
+		</div>
+		<div class="badgetitle has-text-centered">
+			<div class="badge-image">
+				<img src="http://bulma.io/images/placeholders/128x128.png"><br>
+			</div>
+		</div>
+	</div>
+	<div class="column is-9">
+		<p>Handles continuous integration, delivery, deployment, uptime, and code quality/maintenance for the team.</p>
+		
+		<table class="table">
+			<tr>
+				<th>Level</th>
+				<th>Skill</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Java Platform</a></td>
+				<td>Low level programming, taught as POSIX in universities, including C, memory allocation</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Object Oriented Programming</a></td>
+				<td>SQL + NoSQL + Queues (Web Architecture) + Scaling</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Algorithmic Programming</a></td>
+				<td>Complexity + Recursion + Induction</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o gold" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Test, CI/CD, and Site Reliability</a></td>
+				<td>1 Sentence Description of Skill</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">API Design</a></td>
+				<td>Web Architecture. API design, documentation, REST, JSON, Networks, Latency. Microservice architecture.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+				<div class="columns roles">
+	<div class="column is-3">
+		<div class="role-title has-text-centered">
+			Junior DevOps Engineer
+		</div>
+		<div class="badgetitle has-text-centered">
+			<div class="badge-image">
+				<img src="http://bulma.io/images/placeholders/128x128.png"><br>
+			</div>
+		</div>
+	</div>
+	<div class="column is-9">
+		<p>Handles continuous integration, delivery, deployment, uptime, and code quality/maintenance for the team.</p>
+		
+		<table class="table">
+			<tr>
+				<th>Level</th>
+				<th>Skill</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Java Platform</a></td>
+				<td>Low level programming, taught as POSIX in universities, including C, memory allocation</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Object Oriented Programming</a></td>
+				<td>SQL + NoSQL + Queues (Web Architecture) + Scaling</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Algorithmic Programming</a></td>
+				<td>Complexity + Recursion + Induction</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o gold" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Test, CI/CD, and Site Reliability</a></td>
+				<td>1 Sentence Description of Skill</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">API Design</a></td>
+				<td>Web Architecture. API design, documentation, REST, JSON, Networks, Latency. Microservice architecture.</td>
+			</tr>
+		</table>
+	</div>
+</div>
+				<div class="columns roles">
+	<div class="column is-3">
+		<div class="role-title has-text-centered">
+			Junior DevOps Engineer
+		</div>
+		<div class="badgetitle has-text-centered">
+			<div class="badge-image">
+				<img src="http://bulma.io/images/placeholders/128x128.png"><br>
+			</div>
+		</div>
+	</div>
+	<div class="column is-9">
+		<p>Handles continuous integration, delivery, deployment, uptime, and code quality/maintenance for the team.</p>
+		
+		<table class="table">
+			<tr>
+				<th>Level</th>
+				<th>Skill</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o bronze" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Java Platform</a></td>
+				<td>Low level programming, taught as POSIX in universities, including C, memory allocation</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i>
+				</td>
+				<td class="link"><a href="">Object Oriented Programming</a></td>
+				<td>SQL + NoSQL + Queues (Web Architecture) + Scaling</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Algorithmic Programming</a></td>
+				<td>Complexity + Recursion + Induction</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o gold" aria-hidden="true"></i></td>
+				<td class="link"><a href="">Test, CI/CD, and Site Reliability</a></td>
+				<td>1 Sentence Description of Skill</td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-dot-circle-o silver" aria-hidden="true"></i></td>
+				<td class="link"><a href="">API Design</a></td>
+				<td>Web Architecture. API design, documentation, REST, JSON, Networks, Latency. Microservice architecture.</td>
+			</tr>
+		</table>
+	</div>
+</div>
 			</div>
 		</div>
 		<div class="column is-3 helpertxt">
 			<div class="section helpertxt">
-				<h2 class="title is-4">T1 Says:</h2>
-				<h2 class="subtitle">What's a role?</h2>
+				<h2 class="title is-4">T1 Says</h2>
+				<h2 class="subtitle">Your Role</h2>
 				<div class="content">
-					<p>OPTIONAL: Don't show badges in this table.</p>
-					<p>You can qualify for a role by adding badges.</p>
-					<p></p>
+					<p>Front End Engineer (Modern Web) </p>
+					<p>Badges Needed: UI Design, Single Page Apps, Algorithms, Testing</p>
+					<h2>How do I earn Badges?</h2>
+					<p>Earn badges by passing assessments.</p>
 				</div>
 			</div>
-			
-			
 		</div>
-	</div>
-
+	
   </body>
   
   

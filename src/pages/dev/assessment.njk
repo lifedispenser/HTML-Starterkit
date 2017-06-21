@@ -1,0 +1,47 @@
+{% set title = "All Roles" %}
+{% block nav %}
+	{% include "nav-guest.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'dev-nav.njk' %}
+		<div class="column is-10">
+			<div class="section">
+				<h2 class="title is-3">Assessment</h2>
+				<h2 class="subtitle is-5">An assessment is something that awards blank.</h2>
+				<div class="assessment" style="border:1px solid grey;">
+					{% include '_assessment.njk' %}
+				</div>
+				<h2>This assessment is related to the following roles</h2>
+				<div class="related" style="border:1px solid grey;">
+					<div class="columns is-multiline assessments">
+						{% for i in range(0, 4) -%}
+							<div class="column is-4 has-text-centered">
+								<img src="http://bulma.io/images/placeholders/64x64.png">
+								<br>
+								<div class="role-title">
+									Web Fullstack Developer
+								</div>
+							</div>
+							{%- endfor %}
+						</div>
+					</div>
+					<h2>This assessment tests the following skills:</h2>
+					<div class="related" style="border:1px solid grey;">
+					<div class="columns is-multiline assessments">
+						{% for i in range(0, 4) -%}
+							<div class="column is-4 has-text-centered">
+								<img src="http://bulma.io/images/placeholders/64x64.png">
+								<br>
+								<div class="role-title">
+									Web Fullstack Developer
+								</div>
+							</div>
+							{%- endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+	{% extends "../partials/basic-template.njk" %}

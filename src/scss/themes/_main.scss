@@ -233,8 +233,178 @@ footer {
 
 .left-nav {
 	background-color: $white-bis;
+	border-right: 1px solid lighten($white-bis, 2%);
 	padding: 30px;
 }
 .helpertxt {
-	background-color: $grey-lighter;
+	background-color: $white-bis;
+}
+table {
+	tr.open {
+		td {
+			border-bottom: 0;
+		}
+		
+	}
+	tr.open + tr > td:first {
+		padding-left: 30px;
+	}
+}
+.featured {
+	i {
+		color: $red;
+	}
+}
+
+.roles {
+	.badgetitle {
+		display:flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.badge-image {
+		position: relative;
+		.level {
+			position: absolute;
+			bottom:0;
+			right:0;
+		}
+	}
+	.seeskills {
+		font-size: 12px;
+	}
+	.badgesummary {
+		position: relative;
+		.float-seemore {
+			position: absolute;
+			bottom: 20px;
+			right: 30px;
+		}	
+	}
+	.badgeskills {
+		margin-top:-29px;
+	}
+	
+	img {
+		border-radius:3000px;
+	}
+	.role-title {
+		font-size: 20px;
+		padding-bottom:15px;
+	}
+	i {
+		color: $grey-light;
+	}
+	table {
+		th, td {
+			padding:0 4px;
+		}
+		th {
+			font-size:8px;
+			text-transform: uppercase;
+			font-weight: normal;
+			color: $grey-light;
+		}
+		td:first-child {
+			padding-left:5px;
+		}
+		td.link {
+			width:200px;
+			font-size:12px;
+			// max-width: 120px;
+			// overflow:hidden;
+			// text-overflow: ellipsis;
+			// white-space: nowrap;
+			a {
+			}
+		}
+		td:last-child {
+			font-size:12px;
+		}
+		td {
+			border:0;
+			padding-bottom:2px;
+			padding-top:2px;
+		}
+	}
+}
+
+.section-role {
+	
+}
+.line {
+	position: relative;
+	right:-40px;
+	margin-top:85px;
+	border:2px solid grey;
+	height:69%;
+	border-right: 0;
+}
+
+.crumbs {
+	width: auto;
+	th {
+		border: 0;
+		font-size: 8px;
+		font-weight: normal;
+		padding:0;
+		margin: 0;
+		color: $grey;
+	}
+	td {
+		padding: 0;
+		padding-right: 20px;
+		font-size: 12px;
+	}
+}
+
+i.bronze {
+	color: $bronze;
+}
+i.silver {
+	color: $silver;
+}
+i.gold {
+	color: $gold;
+}
+
+.box.status {
+	border-radius: 0px;
+	padding: 0;
+	text-align: center;
+	border:1px solid $grey-lighter;
+	box-shadow:none;
+	.columns {
+		margin:0;
+	}
+	.column {
+		padding:0;
+	}
+	.subbox {
+		padding: 5px 17px 3px;
+	}
+	.header {
+		font-size:10px;
+		text-transform: uppercase;
+		padding-bottom:7px;
+		color: $grey;
+	}
+	.value {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		min-height: 70px;
+		font-size: 14px;
+	}
+	.change {
+		font-size: 10px;
+		width:100%;
+		visibility:hidden;
+	}
+	.subbox:hover {
+		background-color: $white-bis;
+		.change {
+			visibility: visible;
+		}
+	}
 }

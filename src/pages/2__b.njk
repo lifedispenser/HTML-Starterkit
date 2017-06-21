@@ -1,0 +1,115 @@
+{% set title = "Pick Role" %}
+{% block nav %}
+	{% include "nav-user.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'left-nav.njk' %}
+		
+		<div class="column is-7">
+			<div class="section">
+				<h2 class="title is-3">Your Role</h2>
+				<h2 class="subtitle is-5">Pick a role. You can apply to many jobs at once when you qualify for that role.</h2>
+				<br>
+				<nav class="level">
+					<!-- Left side -->
+					<div class="level-left">
+						<div class="level-item">
+							<p class="subtitle is-5">
+								<strong>12</strong> roles
+							</p>
+						</div>
+						<div class="level-item">
+							<p class="control has-addons">
+								<input class="input" type="text" placeholder="Search for role">
+								<button class="button">
+								Search
+								</button>
+							</p>
+						</div>
+					</div>
+					<!-- Right side -->
+					<div class="level-right">
+						<p class="level-item"><strong>All</strong></p>
+						<p class="level-item"><a href="">Modern Web</a></p>
+						<p class="level-item"><a>Java</a></p>
+						<p class="level-item"><a>Microsoft</a></p>
+						<p class="level-item"><a>Mobile</a></p>
+						<p class="level-item"><a href="" class="button is-outline">?</a></p>
+					</div>
+				</nav>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Role</th>
+							<th>Badges Needed</th>
+							<th># Jobs Available</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Front End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>14 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (Java)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>7 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Front End Engineer (C++)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>3 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+						<tr>
+							<td>Back End Engineer (Modern Web)</td>
+							<td>
+								UI Design, Single Page Apps, Algorithms, Testing
+							</td>
+							<td>23 Jobs with this Role</td>
+							<td><a href="" class="button is-outline">Select Role</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<nav class="pagination is-centered">
+					<a class="pagination-previous">Previous</a>
+					<a class="pagination-next">Next</a>
+					<ul class="pagination-list">
+						<li><a class="pagination-link">1</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">3</a></li>
+						<li><a class="pagination-link is-current">4</a></li>
+						<li><a class="pagination-link">5</a></li>
+						<li><span class="pagination-ellipsis">&hellip;</span></li>
+						<li><a class="pagination-link">7</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says:</h2>
+				<h2 class="subtitle">What's a role?</h2>
+				<div class="content">
+					<p>OPTIONAL: Don't show badges in this table.</p>
+					<p>You can qualify for a role by adding badges.</p>
+					<p></p>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

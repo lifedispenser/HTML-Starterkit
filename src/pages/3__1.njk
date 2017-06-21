@@ -1,0 +1,86 @@
+{% set title = "Qualify for Role" %}
+{% block nav %}
+	{% include "nav-user.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'left-nav.njk' %}
+		<div class="column is-7 section-role">
+			<br><br>
+			{% set stage = 4 %}
+			{% include "breadcrumbs.njk" %}
+			<div class="message is-info">
+				<div class="message-body">
+					<b>Qualification needed</b>. Pass assessment or add coursework to showcase your role level.
+				</div>
+			</div>
+			<div class="columns">
+				<div class="column is-6">
+					<table class="table">
+						<tr>
+							<th>Assessment</th>
+							<th>Time</th>
+						</tr>
+						<tr>
+							<td><a href="/3__2.html">Web Dev Quiz</a></td>
+							<td>45 min</td>
+						</tr>
+						<tr>
+							<td><a href="/3__2.html">Conway's Game of Life (Coding Challenge)</a></td>
+							<td>8 hrs</td>
+						</tr>
+					</table>
+				</div>
+				<div class="column is-6">
+					<table class="table">
+						<tr>
+							<th>Coursework</th>
+							<th>Time</th>
+						</tr>
+						<tr>
+							<td><a href="">Web Dev Quiz</a></td>
+							<td>45 min</td>
+						</tr>
+						<tr>
+							<td><a href="">Conway's Game of Life (Coding Challenge</a></td>
+							<td>8 hrs</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="box">
+				<div class="level">
+					<div class="level-left">
+						<p>Current Badge</p>
+					</div>
+					<div class="level-right">
+						<div class="level-item">
+							<p><a href="">embed</a></p>
+						</div>
+						<div class="level-item">
+							<p><a href="">view on profile</a></p>
+						</div>
+					</div>
+				</div>
+				{% include "role-badge-q.njk" %}
+				<div class="message is-info">
+					<div class="message-body">Missing required skills? You can click into each skill to take additional assessments to qualify for them.
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says</h2>
+				<h2 class="subtitle">Your Role</h2>
+				<div class="content">
+					<p>Front End Engineer (Modern Web) </p>
+					<p>Badges Needed: UI Design, Single Page Apps, Algorithms, Testing</p>
+					<h2>How do I earn Badges?</h2>
+					<p>Earn badges by passing assessments.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

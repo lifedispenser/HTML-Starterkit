@@ -30,7 +30,7 @@ gulp.task('nunjucks', function() {
 
 // Automate CSS compiling
 gulp.task('sass', function() {
-  return gulp.src('src/scss/**/*.scss')
+  return gulp.src(['src/scss/**/*.scss', 'src/scss/**/*.sass'])
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('public/css'))
@@ -61,7 +61,7 @@ gulp.task('watch', function() {
     server: "./public"
   });
 
-  gulp.watch('src/scss/**/*.scss', ['cssnano']);
+  gulp.watch(['src/scss/**/*.scss', 'src/scss/**/*.sass'], ['cssnano']);
   gulp.watch('src/**/*.njk', ['nunjucks']);
   gulp.watch('public/**/*.html', ['sitemap']).on('change', browserSync.reload);
 });

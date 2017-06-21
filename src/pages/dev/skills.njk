@@ -1,0 +1,42 @@
+{% set title = "All Roles" %}
+{% block nav %}
+	{% include "nav-guest.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'dev-nav.njk' %}
+		<div class="column is-10">
+			<div class="section">
+				<h2 class="title is-3">Skills</h2>
+				<h2 class="subtitle is-5">A list of all the skills.</h2>
+				<p>See the skills chart to see how skills, roles, and assessments relate.</p>
+				<div class="skills" style="border:1px solid grey;">
+					<nav class="level">
+						<div class="level-left">
+							<p class="level-item">Filter by:</p>
+							<p class="level-item"><a href="">Role 1</a></p>
+							<p class="level-item"><a href="">Role 2</a></p>
+							<p class="level-item"><a href="">Role 3</a></p>
+							<p class="level-item"><a href="">Role 4</a></p>
+						</div>
+						<div class="level-right">
+							<div class="level-item">
+								<p class="subtitle is-5">
+									<strong>32</strong> Skill
+								</p>
+							</div>
+						</div>
+					</nav>
+					<div class="columns is-multiline assessments">
+						{% for i in range(0, 20) -%}
+							<div class="column is-12">
+								<a href="skill.html">FrontEnd Programming</a>
+							</div>
+							{%- endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+	{% extends "../partials/basic-template.njk" %}

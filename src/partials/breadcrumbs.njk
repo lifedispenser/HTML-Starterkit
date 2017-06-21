@@ -1,0 +1,51 @@
+<div class="box status">
+	<nav class="columns">
+		<div class="column is-3">
+			<div class="subbox">
+				<p class="header">Role</p>
+				<p class="value">
+					{% if stage > 0 %}
+						DevOps Engineer
+					{% endif %}
+				</p>
+				<a href="/2.html" class="change">Change</a>
+			</div>
+		</div>
+		<div class="column is-3">
+			<div class="subbox">
+				<p class="header">Level</p>
+				<p class="value">
+				Senior&nbsp;
+					{% if stage > 1 %}
+						Senior
+					{% endif %}
+				</p>
+				<a href="/3__1a.html" class="change">Change</a>
+			</div>
+		</div>
+		<div class="column is-3">
+			<div class="subbox">
+				<p class="header">Assessment</p>
+				<p class="value">
+				&nbsp;
+					{% if stage > 2 %}
+						Doing Conway's Game of Life
+					{% endif %}
+				</p>
+				<a href="" class="change">Select Assessment</a>
+			</div>
+		</div>
+		<div class="column is-3">
+			<div class="subbox">
+				<p class="header">Status</p>
+				<p class="value">
+				<b>Not Verified &nbsp;</b>
+					{% if stage > 3 %}
+						
+					{% endif %}
+				</p>
+				<a href="" class="change">View Badge</a>
+			</div>
+		</div>
+	</nav>
+</div>

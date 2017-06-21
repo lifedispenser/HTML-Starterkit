@@ -1,0 +1,84 @@
+{% set title = "Earn Badges" %}
+{% block nav %}
+	{% include "nav-user.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'left-nav.njk' %}
+		<div class="column is-7">
+			<div class="section">
+				<h3 class="title is-3">Your assessments</h3>
+				<br>
+				<p style="font-size:12px; text-transform: uppercase">Passed Assessments</p>
+				<br>
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">
+							<i class="fa fa-star" aria-hidden="true"></i> &nbsp;
+							Conway's Game of Life (Coding Challenge)
+						</p>
+						<p class="card-header-icon">
+							for Front End Developer (Modern Web)
+						</p>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							Passed. <a href="">View score details</a>
+						</div>
+					</div>
+				</div>
+				<br><br>
+				<p style="font-size:12px; text-transform: uppercase">Pending Assessments</p>
+				<br>
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">
+							<i class="fa fa-star" aria-hidden="true"></i> &nbsp;
+							Fast Programming Quiz
+						</p>
+						<p class="card-header-icon">
+							for All Roles
+						</p>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							Status: Grading
+						</div>
+					</div>
+				</div>
+				<br>
+				<p style="font-size:12px; text-transform: uppercase">Failed Assessments</p>
+				<br>
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">
+							<i class="fa fa-star" aria-hidden="true"></i> &nbsp;
+							Fast Programming Quiz
+						</p>
+						<p class="card-header-icon">
+							for All Roles
+						</p>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							Unfortunately, you didn't pass this assessment. You can take this assessment again after August 23 2017.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column is-3 helpertxt">
+			<div class="section helpertxt">
+				<h2 class="title is-4">T1 Says</h2>
+				<h2 class="subtitle">Your Role</h2>
+				<div class="content">
+					<p>Front End Engineer (Modern Web) </p>
+					<p>Badges Needed: UI Design, Single Page Apps, Algorithms, Testing</p>
+					<h2>How do I earn Badges?</h2>
+					<p>Earn badges by passing assessments.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

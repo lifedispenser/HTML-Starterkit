@@ -1,0 +1,15 @@
+{% set title = "All Roles" %}
+{% block nav %}
+	{% include "nav-guest.njk" %}
+{% endblock %}
+{% block content %}
+	<div class="columns">
+		{% include 'dev-nav.njk' %}
+		<div class="column is-10">
+			<div class="section">
+				<h2 class="title">Choose left to begin.</h2>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% extends "../partials/basic-template.njk" %}

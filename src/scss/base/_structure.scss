@@ -6,14 +6,3 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
-
-//default links
-
-a {
-	cursor:pointer;
-	color: $red;
-}
-a:hover {
-	color: darken($red, 20);
-}
-

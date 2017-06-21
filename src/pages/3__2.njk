@@ -1,4 +1,4 @@
-{% set title = "Role" %}
+{% set title = "Assessment" %}
 {% block nav %}
 	{% include "nav-user.njk" %}
 {% endblock %}
@@ -6,28 +6,8 @@
 	<div class="columns">
 		{% include 'left-nav.njk' %}
 		<div class="column is-7 section-role">
-			<div class="section">
-				{% set stage = 1 %}
-				{% include "breadcrumbs.njk" %}
-				<div class="message is-info">
-					<div class="message-body">
-						Choose a level that matches your capabilities and skillsets.
-					</div>
-				</div>
-				<div class="columns">
-					<div class="column is-1">
-						<div class="line"></div>
-					</div>
-					<div class="column is-10">
-						{% set lvl = "Junior" %}
-						{% include "role-badge-lvl.njk" %}
-						{% set lvl = "Mid" %}
-						{% include "role-badge-lvl.njk" %}
-						{% set lvl = "Associate" %}
-						{% include "role-badge-lvl.njk" %}
-					</div>
-				</div>
-			</div>
+			<br><br>
+			{% include 'assessment.njk' %}
 		</div>
 		<div class="column is-3 helpertxt">
 			<div class="section helpertxt">
