@@ -1,0 +1,12 @@
+<div class="columns gv">
+		<a class="expand" onclick="$(this).parent().addClass('is-multiline');">Expand</a>
+	{% for i in range(0, 11) -%}
+		<div class="column is-3 has-text-centered">
+			<img src="http://bulma.io/images/placeholders/64x64.png">
+			<br>
+			<div class="gv-title">
+				<a href="3.html">Web Frontend Developer</a>
+			</div>
+		</div>
+	{%- endfor %}
+</div>

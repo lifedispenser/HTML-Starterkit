@@ -26,11 +26,12 @@ gulp.task('nunjucks', function() {
       path: ['src/partials']
     }))
     .pipe(gulp.dest('public'))
+    .pipe(browserSync.stream());
 });
 
 // Automate CSS compiling
 gulp.task('sass', function() {
-  return gulp.src(['src/scss/**/*.scss', 'src/scss/**/*.sass'])
+  return gulp.src('src/scss/**/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('public/css'))
@@ -44,14 +45,15 @@ gulp.task('css-future', ['sass'], function() {
   ];
   return gulp.src('public/css/*.css')
     .pipe(postcss(processors))
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('public/css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('cssnano', ['css-future'], function() {
   return gulp.src('public/css/*.css')
     .pipe(cssnano())
     .pipe(gulp.dest('public/css'))
-    .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 });
 
 // watch & browser refresh
@@ -61,7 +63,7 @@ gulp.task('watch', function() {
     server: "./public"
   });
 
-  gulp.watch(['src/scss/**/*.scss', 'src/scss/**/*.sass'], ['cssnano']);
+  gulp.watch('src/scss/**/*.scss', ['css-future']);
   gulp.watch('src/**/*.njk', ['nunjucks']);
-  gulp.watch('public/**/*.html', ['sitemap']).on('change', browserSync.reload);
+  // gulp.watch('public/**/*.html').on('change', browserSync.reload);
 });
