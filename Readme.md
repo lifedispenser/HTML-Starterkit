@@ -1,4 +1,4 @@
-**NOTE: Prototype kit is not really usable yet. Sorry!**
+**NOTE: Prototype kit is not really usable yet.**
 
 # Prototype Kit
 
